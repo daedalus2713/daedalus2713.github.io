@@ -1,37 +1,64 @@
-## Welcome to GitHub Pages
+# Ngày ngày chém gió
 
-You can use the [editor on GitHub](https://github.com/daedalus2713/daedalus2713.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+# Mục lục
+- [Ngày ngày chém gió](#ngày-ngày-chém-gió)
+- [Mục lục](#mục-lục)
+- [I. Kiến thức tổng hợp:](#i-kiến-thức-tổng-hợp)
+  - [1. Ngôn ngữ:](#1-ngôn-ngữ)
+    - [1.1 Go:](#11-go)
+  - [2. Cơ sở dữ liệu:](#2-cơ-sở-dữ-liệu)
+    - [2.1. SQL:](#21-sql)
+    - [2.2. PostgreSQL](#22-postgresql)
+  - [3. Hệ phân tán - Distributed system:](#3-hệ-phân-tán---distributed-system)
+    - [3.1. Thiết kế hệ thống:](#31-thiết-kế-hệ-thống)
+    - [3.2. Thuật toán đồng thuận:](#32-thuật-toán-đồng-thuận)
+  - [4. Cấu trúc dữ liệu và giải thuật:](#4-cấu-trúc-dữ-liệu-và-giải-thuật)
+    - [4.1. Kiến thức cơ bản:](#41-kiến-thức-cơ-bản)
+    - [4.2. Cấu trúc dữ liệu không cơ bản lắm:](#42-cấu-trúc-dữ-liệu-không-cơ-bản-lắm)
+  - [5. Mạng - Networking:](#5-mạng---networking)
+- [II. Tóm tắt bài viết:](#ii-tóm-tắt-bài-viết)
+- [III. Vớ vẩn nhưng vẫn lưu:](#iii-vớ-vẩn-nhưng-vẫn-lưu)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# I. Kiến thức tổng hợp:
+## 1. Ngôn ngữ:
+### 1.1 Go:
+- **Coding convention**
 
-### Markdown
+- **Quản lý bộ nhớ (Memory management)**
+  - [ ] Bộ thu dọn rác (Garbage collector):
+    - [ ] Mark and sweep
+    - [ ] Write barrier
+    - [ ] Memory ballast
+  - [ ] Cấp phát bộ nhớ:
+    - [ ] Escape analysis:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- **Concurrency**
+  - [ ] Channel
+  - [ ] Context
 
-```markdown
-Syntax highlighted code block
+## 2. Cơ sở dữ liệu:
+### 2.1. SQL:
+- [ ] [SQL Transaction](CoSoDuLieu/SQL/SQLTransaction.md)
+- [ ] SQL Partition
 
-# Header 1
-## Header 2
-### Header 3
+### 2.2. PostgreSQL
+- [ ] Buffer
 
-- Bulleted
-- List
+## 3. Hệ phân tán - Distributed system:
+### 3.1. Thiết kế hệ thống:
 
-1. Numbered
-2. List
+### 3.2. Thuật toán đồng thuận:
+- Chưa đọc đến :(
+  
+## 4. Cấu trúc dữ liệu và giải thuật:
+### 4.1. Kiến thức cơ bản:
 
-**Bold** and _Italic_ and `Code` text
+### 4.2. Cấu trúc dữ liệu không cơ bản lắm:
+- [ ] Bloom filter  
 
-[Link](url) and ![Image](src)
-```
+## 5. Mạng - Networking:
+- Cũng chưa đọc đến :<
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# II. Tóm tắt bài viết:
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/daedalus2713/daedalus2713.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+# III. Vớ vẩn nhưng vẫn lưu:
