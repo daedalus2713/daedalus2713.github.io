@@ -42,7 +42,7 @@
 - [ ] SQL Partition
 
 ### 2.2. PostgreSQL
-- [ ] Buffer
+- [x] [Buffer](CoSoDuLieu/PostgreSQL/PostgreSQLBuffer.md)
 
 ## 3. Hệ phân tán - Distributed system:
 ### 3.1. Thiết kế hệ thống:
