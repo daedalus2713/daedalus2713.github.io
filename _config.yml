@@ -3,28 +3,119 @@ remote_theme             : "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 layout                   : "single" 
 
-# Site settings
+# plugins
+plugins:
+  # - jekyll-paginate
+  # - jekyll-sitemap
+  - jekyll-include-cache
+
+
+# Site Settings
+locale                   : "en-US"
 title                    : "DAEDALUS2713"
-logo                     : "https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4"
+title_separator          : "-"
 name                     : "daedalus2713"
-description              : "Personal blog"
-repository               : "https://github.com/daedalus2713"
+description              : "Personal blog."
+baseurl                  : "/"
+repository               : "daedalus2713/daedalus2713.github.io"
+logo                     : "https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title           : "Custom Title" # overrides the website title displayed in the masthead, use " " for no title
+
 
 # Site Author
 author:
   name             : "daedalus2713"
-  avatar           : https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4
+  avatar           : "https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4"
   bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            : "daedalus.2713@gmail.com"
+  location         : "Nowhere"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/daedalus2713"
 
-# plugins
-plugins:
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/daedalus2713"
+
+
+# Liquid
+strict_front_matter: true
+liquid:
+  error_mode: strict
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# mimic GitHub Pages with --safe
+whitelist:
   - jekyll-paginate
   - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
   - jekyll-include-cache
+
+
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+  # # _pages
+  # - scope:
+  #     path: "_pages"
+  #     type: pages
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  # # _recipes
+  # - scope:
+  #     path: ""
+  #     type: recipes
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     share: true
+  # # _pets
+  # - scope:
+  #     path: ""
+  #     type: pets
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     share: true
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
 
