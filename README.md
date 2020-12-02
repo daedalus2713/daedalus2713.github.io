@@ -1,7 +1,11 @@
-# Ngày ngày chém gió
+---
+title: "Homepage"
+layout: "single"
+permalink: /
+author_profile: true
+---
 
 # Mục lục
-- [Ngày ngày chém gió](#ngày-ngày-chém-gió)
 - [Mục lục](#mục-lục)
 - [I. Kiến thức tổng hợp:](#i-kiến-thức-tổng-hợp)
   - [1. Ngôn ngữ:](#1-ngôn-ngữ)
