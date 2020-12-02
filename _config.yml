@@ -1,9 +1,29 @@
-#:
-remote_theme: "mmistakes/minimal-mistakes@4.21.0"
+# themes
+remote_theme             : "mmistakes/minimal-mistakes@4.21.0"
+minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+# Site settings
+logo                     : https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4
+name                     : "daedalus2713"
+description              : "Personal blog"
+repository               : https://github.com/daedalus2713
+
+# plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
   - jekyll-include-cache
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: # true
+      share: false
+      related: false
