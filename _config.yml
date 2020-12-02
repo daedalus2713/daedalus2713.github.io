@@ -3,10 +3,23 @@ remote_theme             : "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site settings
-logo                     : https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4
+title                    : "DAEDALUS2713"
+logo                     : "https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4"
 name                     : "daedalus2713"
 description              : "Personal blog"
-repository               : https://github.com/daedalus2713
+repository               : "https://github.com/daedalus2713"
+
+# Site Author
+author:
+  name             : "daedalus2713"
+  avatar           : https://avatars3.githubusercontent.com/u/75079751?s=460&u=37dce84eac023e7ead3880fd13488bca0a8867d7&v=4
+  bio              : "I am an **amazing** person."
+  location         : "Somewhere"
+  email            : "daedalus.2713@gmail.com"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/daedalus2713"
 
 # plugins
 plugins:

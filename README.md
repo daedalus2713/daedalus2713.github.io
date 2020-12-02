@@ -46,7 +46,7 @@
 
 ## 3. Hệ phân tán - Distributed system:
 ### 3.1. Thiết kế hệ thống:
-
+- API Gateway Pattern
 ### 3.2. Thuật toán đồng thuận:
 - Chưa đọc đến :(
   
