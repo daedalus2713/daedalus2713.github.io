@@ -1,6 +1,7 @@
 # themes
 remote_theme             : "mmistakes/minimal-mistakes@4.21.0"
 minimal_mistakes_skin    : "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+layout                   : "single" 
 
 # Site settings
 title                    : "DAEDALUS2713"
@@ -27,16 +28,3 @@ plugins:
   - jekyll-sitemap
   - jekyll-include-cache
 
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: false
-      comments: # true
-      share: false
-      related: false
