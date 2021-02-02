@@ -25,4 +25,4 @@ jobs:
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
     
     - name: push github
-      run: git config --global user.email "daedalus.2713@gmail.com" && git config --global user.name "daedalus2713" && git config --global url."https://daedalus2713:${{ secrets.SECRET_NAME }}@github.com".insteadOf "https://github.com" && git add . && git commit --allow-empty -m "build book" && git show-ref && git push -u origin HEAD:master
+      run: git config --global user.email "daedalus.2713@gmail.com" && git config --global user.name "daedalus2713" && git config --global url."https://daedalus2713:${{ secrets.SECRET_NAME }}@github.com".insteadOf "https://github.com" && git add . && git commit --allow-empty -m "build book" && git show-ref
