@@ -5,5 +5,13 @@ multilingual = false
 src = "src"
 title = ""
 
+[preprocessor.index]
+
 [build]
 build-dir = "docs"
+create-missing = true
+
+[output.html]
+no-section-label = true
+git-repository-url = "https://github.com/daedalus2713/daedalus2713.github.io"
+git-repository-icon = "fa-github"
