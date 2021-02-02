@@ -1,47 +1,43 @@
-# Postgres Buffer
+# HOW TO INSTALL POSTGRESQL
 
-> [Bài viết gốc](https://online.grokking.org/articles/13/postgresql-buffer-hoat-dong-nhu-the-nao-)
+## HOW TO INSTALL POSTGRESQL
 
-## **Mục lục**:
+* Run command:
+  * ```bash
+    $ sudo apt update
+    $ sudo apt install postgresql postgresql-contri
+    ```
+* Login to PostgreSQL
+  * Switch to user postgres:
+    * ```bash
+      $ sudo -i -u postgres
+      ```
+  * Login to Postgres:
+    * ```bash
+      $ psql
+      ```
+* Create user:
+  * ```bash
+    $ createuser --interactive --pwpromt
+    ```
+* Create database:
+  * ```bash
+    $ createdb -O user dbname
+    ```
+* Change config to connect by password from localhost
+  * locate the pg\_hba.conf file:
+    * /etc/postgresql/12/main
+  * edit:
+    * local all all peer
+    * -&gt; local all all md5
 
-* [_**POSTGRESQL BUFFER**_]()
-  * [**Mục lục**:]()
-  * [**Buffer là gì ?**]()
-  * [**Buffer Manager**:]()
-  * [**Buffer pool đầy**:]()
-  * [**Cập nhật dữ liệu**:]()
+## Connect with PGAdmin
 
-## **Buffer là gì ?**
-
-* Nguyên tắc hoạt động: Đưa 1 phần dữ liệu thường dùng vào RAM để tăng tốc độ truy xuất.
-* **Phân biệt với cache:**
-  * Cache lưu các dữ liệu đã đuợc xử lý vào bộ nhớ tạm \(Ram hoặc local storage của người sử dụng\) -&gt; Tiết kiệm thời gian _tính toán_
-  * Lưu dữ liệu thô, phục vụ cho các lần tính toán -&gt; Tiết kiệm thời gian _truy xuất_
-
-## **Buffer Manager**:
-
-* Thành phần chính:
-  * Buffer table
-  * Buffer descriptor: Quản lý metadata của buffer slot
-  * Buffer pool:
-    * 1 array
-    * Mỗi slot được cấp 1 buffer\_id
-* Buffer tag:
-  * Gồm 3 số
-  * Dùng để định dang page thuộc table nào trong database
-  * Page thứ mấy của table
-* Xử lý query:
-  * 
-
-## **Buffer pool đầy**:
-
-* Từ phiên bản 8.1, sử dụng clock sweep, loại bỏ các page thỏa mãn
-  * Ít được truy xuất nhất
-  * Không có tiến trình nào đang truy xuất page đó
-
-## **Cập nhật dữ liệu**:
-
-* Dữ liệu được cập nhật vào trong buffer \(Tạo ra **dirty page**\)
-* Sau 1 thời gian, dữ liệu được lưu lại xuống disk \(Flush dirty pages\)
-* Để đảm bảo cho dữ liệu, sử dụng WAL - Write Ahead Log để cập nhật lại nếu bị mất dữ liệu ở các **dirty pages**.
+* SSH
+  * host: local
+  * post: 5432
+* SSH Tunnel:
+  * host: **PUCLIC IP**
+  * port: 22 _\(Default for ssh\)_
+  * Choose identity file: ssh pem file
 
