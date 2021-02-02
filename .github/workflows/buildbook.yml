@@ -19,6 +19,7 @@ jobs:
       with:
         path: |
          ~/.cargo/registry
+         ~/.cargo/bin
          ~/.cargo/git
            target
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
@@ -32,4 +33,4 @@ jobs:
       shell: bash
     
     - name: push github
-      run: git config --global user.email "daedalus.2713@gmail.com" && git config --global user.name "daedalus2713" && git --global config url."https://daedalus2713:${{ secrets.SECRET_NAME }}@github.com".insteadOf "https://github.com" && git add . && git commit -m "build book" && git push
+      run: git config --global user.email "daedalus.2713@gmail.com" && git config --global user.name "daedalus2713" && git config --global url."https://daedalus2713:${{ secrets.SECRET_NAME }}@github.com".insteadOf "https://github.com" && git add . && git commit -m "build book" && git push -u origin master
