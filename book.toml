@@ -1,0 +1,9 @@
+[book]
+authors = ["THANHPP"]
+language = "en"
+multilingual = false
+src = "src"
+title = ""
+
+[build]
+build-dir = "docs"
