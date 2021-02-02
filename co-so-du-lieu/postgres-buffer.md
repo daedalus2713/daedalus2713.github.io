@@ -2,15 +2,6 @@
 
 > [Bài viết gốc](https://online.grokking.org/articles/13/postgresql-buffer-hoat-dong-nhu-the-nao-)
 
-## **Mục lục**:
-
-* [_**POSTGRESQL BUFFER**_]()
-  * [**Mục lục**:]()
-  * [**Buffer là gì ?**]()
-  * [**Buffer Manager**:]()
-  * [**Buffer pool đầy**:]()
-  * [**Cập nhật dữ liệu**:]()
-
 ## **Buffer là gì ?**
 
 * Nguyên tắc hoạt động: Đưa 1 phần dữ liệu thường dùng vào RAM để tăng tốc độ truy xuất.
