@@ -7,7 +7,7 @@ Trong một số trường hợp, khi hàm\(1\) là tham số truyền vào củ
 
 ## Ví dụ thực tế
 
-{% embed url="https://github.com/gin-gonic/gin\#using-get-post-put-patch-delete-and-options" %}
+{% embed url="https://github.com/gin-gonic/gin\#using-get-post-put-patch-delete-and-options" caption="" %}
 
 ## Code giải thích
 
@@ -28,8 +28,5 @@ func printStr(str string) {
 func Use() {
     PrintString(printStr) // Output: HELLO WORLD
 }
-
 ```
-
-
 
