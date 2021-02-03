@@ -21,6 +21,7 @@ jobs:
          ~/.cargo/registry
          ~/.cargo/bin
          ~/.cargo/git
+         ~/.cargo
            target
         key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
@@ -31,3 +32,17 @@ jobs:
     - name: build book
       run: ./genbook.sh
       shell: bash
+    
+    - name: commit github master
+      run: |
+        run: |
+        git config --local user.email "daedalust2713@gmail.com"
+        git config --local user.name "daedalus2713"
+        git commit -m "Build book from gitbook" -a --allow-empty
+      
+    - name: github push
+      run: |
+        git remote set-url origin https://github.com/daedalus2713/daedalus2713.github.io.git
+        git fetch origin master
+        git push origin HEAD:master
+        

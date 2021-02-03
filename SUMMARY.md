@@ -11,3 +11,7 @@
 
 * [SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices](he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md)
 
+## Golang
+
+* [Hàm không truyền tham số](golang/ham-khong-truyen-tham-so.md)
+
