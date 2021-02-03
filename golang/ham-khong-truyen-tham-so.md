@@ -28,8 +28,5 @@ func printStr(str string) {
 func Use() {
     PrintString(printStr) // Output: HELLO WORLD
 }
-
 ```
-
-
 
