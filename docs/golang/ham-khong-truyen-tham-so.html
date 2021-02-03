@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>POSTGRESQL BUFFER</title>
+        <title>Hàm không truyền tham số</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Giới thiệu</a></li><li class="chapter-item expanded affix "><li class="part-title">Cơ sở dữ liệu</li><li class="chapter-item expanded "><a href="../co-so-du-lieu/postgresql-buffer.html" class="active">POSTGRESQL BUFFER</a></li><li class="chapter-item expanded "><a href="../co-so-du-lieu/postgres-buffer.html">HOW TO INSTALL POSTGRESQL</a></li><li class="chapter-item expanded affix "><li class="part-title">Hệ phân tán</li><li class="chapter-item expanded "><a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices</a></li><li class="chapter-item expanded affix "><li class="part-title">Golang</li><li class="chapter-item expanded "><a href="../golang/ham-khong-truyen-tham-so.html">Hàm không truyền tham số</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html">Giới thiệu</a></li><li class="chapter-item expanded affix "><li class="part-title">Cơ sở dữ liệu</li><li class="chapter-item expanded "><a href="../co-so-du-lieu/postgresql-buffer.html">POSTGRESQL BUFFER</a></li><li class="chapter-item expanded "><a href="../co-so-du-lieu/postgres-buffer.html">HOW TO INSTALL POSTGRESQL</a></li><li class="chapter-item expanded affix "><li class="part-title">Hệ phân tán</li><li class="chapter-item expanded "><a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices</a></li><li class="chapter-item expanded affix "><li class="part-title">Golang</li><li class="chapter-item expanded "><a href="../golang/ham-khong-truyen-tham-so.html" class="active">Hàm không truyền tham số</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,73 +167,41 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#postgresql-buffer" id="postgresql-buffer">POSTGRESQL BUFFER</a></h1>
-<blockquote>
-<p><a href="https://online.grokking.org/articles/13/postgresql-buffer-hoat-dong-nhu-the-nao-">Bài viết gốc</a></p>
-</blockquote>
-<h2><a class="header" href="#buffer-là-gì-" id="buffer-là-gì-"><strong>Buffer là gì ?</strong></a></h2>
-<ul>
-<li>Nguyên tắc hoạt động: Đưa 1 phần dữ liệu thường dùng vào RAM để tăng tốc độ truy xuất.</li>
-<li><strong>Phân biệt với cache:</strong>
-<ul>
-<li>Cache lưu các dữ liệu đã đuợc xử lý vào bộ nhớ tạm (Ram hoặc local storage của người sử dụng) -&gt; Tiết kiệm thời gian <em>tính toán</em></li>
-<li>Lưu dữ liệu thô, phục vụ cho các lần tính toán -&gt; Tiết kiệm thời gian <em>truy xuất</em></li>
-</ul>
-</li>
-</ul>
-<h2><a class="header" href="#buffer-manager" id="buffer-manager"><strong>Buffer Manager</strong>:</a></h2>
-<ul>
-<li>Thành phần chính:
-<ul>
-<li>Buffer table</li>
-<li>Buffer descriptor: Quản lý metadata của buffer slot</li>
-<li>Buffer pool:
-<ul>
-<li>1 array</li>
-<li>Mỗi slot được cấp 1 buffer_id</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Buffer tag:
-<ul>
-<li>Gồm 3 số</li>
-<li>Dùng để định dang page thuộc table nào trong database</li>
-<li>Page thứ mấy của table</li>
-</ul>
-</li>
-</ul>
-<p><img src="../.gitbook/assets/postgresbuffer%20%282%29%20%282%29.png" alt="Xử lý query" /></p>
-<h2><a class="header" href="#buffer-pool-đầy" id="buffer-pool-đầy"><strong>Buffer pool đầy</strong>:</a></h2>
-<ul>
-<li>Từ phiên bản 8.1, sử dụng clock sweep, loại bỏ các page thỏa mãn
-<ul>
-<li>Ít được truy xuất nhất</li>
-<li>Không có tiến trình nào đang truy xuất page đó</li>
-</ul>
-</li>
-</ul>
-<h2><a class="header" href="#cập-nhật-dữ-liệu" id="cập-nhật-dữ-liệu"><strong>Cập nhật dữ liệu</strong>:</a></h2>
-<ul>
-<li>Dữ liệu được cập nhật vào trong buffer (Tạo ra <strong>dirty page</strong>)</li>
-<li>Sau 1 thời gian, dữ liệu được lưu lại xuống disk (Flush dirty pages)</li>
-<li>Để đảm bảo cho dữ liệu, sử dụng WAL - Write Ahead Log để cập nhật lại nếu bị mất dữ liệu ở các <strong>dirty pages</strong>.</li>
-</ul>
+                        <h1><a class="header" href="#hàm-không-truyền-tham-số" id="hàm-không-truyền-tham-số">Hàm không truyền tham số</a></h1>
+<h2><a class="header" href="#tổng-quan" id="tổng-quan">Tổng quan</a></h2>
+<p>Trong một số trường hợp, khi hàm(1) là tham số truyền vào của hàm(2) khác thì không cần truyền thêm biến cho hàm(1).<br />
+Đây là một cách dùng khá phổ biến trong lập trình Golang nhưng có thể gây ra sự khó hiểu cho người mới bắt đầu.</p>
+<h2><a class="header" href="#ví-dụ-thực-tế" id="ví-dụ-thực-tế">Ví dụ thực tế</a></h2>
+<p>{% embed url=&quot;https://github.com/gin-gonic/gin#using-get-post-put-patch-delete-and-options&quot; %}</p>
+<h2><a class="header" href="#code-giải-thích" id="code-giải-thích">Code giải thích</a></h2>
+<p>Khi sử dụng phương pháp này, tham số truyền vào của hàm(1) sẽ được tạo/tìm trong hàm 2</p>
+<pre><code class="language-go">func PrintString(fn func(str string)) {
+    // create the string
+    var expStr = &quot;HELLO WORLD&quot;
+    fn(expStr)
+}
+
+func printStr(str string) {
+    fmt.Println(str)
+}
+
+// use PrintString
+func Use() {
+    PrintString(printStr) // Output: HELLO WORLD
+}
+
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../co-so-du-lieu/postgres-buffer.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -243,15 +211,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../co-so-du-lieu/postgres-buffer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
