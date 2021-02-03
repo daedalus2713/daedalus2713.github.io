@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>HOW TO INSTALL POSTGRESQL · GitBook</title>
+        <title>Hàm không truyền tham số · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" />
     
-    
-    <link rel="prev" href="postgresql-buffer.html" />
+    <link rel="prev" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" />
     
 
     </head>
@@ -109,9 +107,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="postgresql-buffer.html">
+        <li class="chapter " data-level="2.1" data-path="../co-so-du-lieu/postgresql-buffer.html">
             
-                <a href="postgresql-buffer.html">
+                <a href="../co-so-du-lieu/postgresql-buffer.html">
             
                     
                     POSTGRESQL BUFFER
@@ -122,9 +120,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="postgres-buffer.html">
+        <li class="chapter " data-level="2.2" data-path="../co-so-du-lieu/postgres-buffer.html">
             
-                <a href="postgres-buffer.html">
+                <a href="../co-so-du-lieu/postgres-buffer.html">
             
                     
                     HOW TO INSTALL POSTGRESQL
@@ -162,9 +160,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../golang/ham-khong-truyen-tham-so.html">
+        <li class="chapter active" data-level="4.1" data-path="ham-khong-truyen-tham-so.html">
             
-                <a href="../golang/ham-khong-truyen-tham-so.html">
+                <a href="ham-khong-truyen-tham-so.html">
             
                     
                     Hàm không truyền tham số
@@ -205,7 +203,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >HOW TO INSTALL POSTGRESQL</a>
+        <a href=".." >Hàm không truyền tham số</a>
     </h1>
 </div>
 
@@ -220,70 +218,28 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="how-to-install-postgresql">HOW TO INSTALL POSTGRESQL</h1>
-<h2 id="how-to-install-postgresql">HOW TO INSTALL POSTGRESQL</h2>
-<ul>
-<li>Run command:<ul>
-<li><pre><code class="lang-bash">$ sudo apt update
-$ sudo apt install postgresql postgresql-contri
+                                <h1 id="h&#xE0;m-kh&#xF4;ng-truy&#x1EC1;n-tham-s&#x1ED1;">H&#xE0;m kh&#xF4;ng truy&#x1EC1;n tham s&#x1ED1;</h1>
+<h2 id="t&#x1ED5;ng-quan">T&#x1ED5;ng quan</h2>
+<p>Trong m&#x1ED9;t s&#x1ED1; tr&#x1B0;&#x1EDD;ng h&#x1EE3;p, khi h&#xE0;m(1) l&#xE0; tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o c&#x1EE7;a h&#xE0;m(2) kh&#xE1;c th&#xEC; kh&#xF4;ng c&#x1EA7;n truy&#x1EC1;n th&#xEA;m bi&#x1EBF;n cho h&#xE0;m(1).<br>&#x110;&#xE2;y l&#xE0; m&#x1ED9;t c&#xE1;ch d&#xF9;ng kh&#xE1; ph&#x1ED5; bi&#x1EBF;n trong l&#x1EAD;p tr&#xEC;nh Golang nh&#x1B0;ng c&#xF3; th&#x1EC3; g&#xE2;y ra s&#x1EF1; kh&#xF3; hi&#x1EC3;u cho ng&#x1B0;&#x1EDD;i m&#x1EDB;i b&#x1EAF;t &#x111;&#x1EA7;u.</p>
+<h2 id="v&#xED;-d&#x1EE5;-th&#x1EF1;c-t&#x1EBF;">V&#xED; d&#x1EE5; th&#x1EF1;c t&#x1EBF;</h2>
+<p><a href="https://github.com/gin-gonic/gin\#using-get-post-put-patch-delete-and-options" target="_blank">https://github.com/gin-gonic/gin#using-get-post-put-patch-delete-and-options</a></p>
+<h2 id="code-gi&#x1EA3;i-th&#xED;ch">Code gi&#x1EA3;i th&#xED;ch</h2>
+<p>Khi s&#x1EED; d&#x1EE5;ng ph&#x1B0;&#x1A1;ng ph&#xE1;p n&#xE0;y, tham s&#x1ED1; truy&#x1EC1;n v&#xE0;o c&#x1EE7;a h&#xE0;m(1) s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o/t&#xEC;m trong h&#xE0;m 2</p>
+<pre><code class="lang-go"><span class="hljs-keyword">func</span> PrintString(fn <span class="hljs-keyword">func</span>(str <span class="hljs-keyword">string</span>)) {
+    <span class="hljs-comment">// create the string</span>
+    <span class="hljs-keyword">var</span> expStr = <span class="hljs-string">&quot;HELLO WORLD&quot;</span>
+    fn(expStr)
+}
+
+<span class="hljs-keyword">func</span> printStr(str <span class="hljs-keyword">string</span>) {
+    fmt.Println(str)
+}
+
+<span class="hljs-comment">// use PrintString</span>
+<span class="hljs-keyword">func</span> Use() {
+    PrintString(printStr) <span class="hljs-comment">// Output: HELLO WORLD</span>
+}
 </code></pre>
-</li>
-</ul>
-</li>
-<li>Login to PostgreSQL<ul>
-<li>Switch to user postgres:<ul>
-<li><pre><code class="lang-bash">$ sudo -i -u postgres
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Login to Postgres:<ul>
-<li><pre><code class="lang-bash">$ psql
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Create user:<ul>
-<li><pre><code class="lang-bash">$ createuser --interactive --pwpromt
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Create database:<ul>
-<li><pre><code class="lang-bash">$ createdb -O user dbname
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Change config to connect by password from localhost<ul>
-<li>locate the pg_hba.conf file:<ul>
-<li>/etc/postgresql/12/main</li>
-</ul>
-</li>
-<li>edit:<ul>
-<li>local all all peer</li>
-<li>-&gt; local all all md5</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="connect-with-pgadmin">Connect with PGAdmin</h2>
-<ul>
-<li>SSH<ul>
-<li>host: local</li>
-<li>post: 5432</li>
-</ul>
-</li>
-<li>SSH Tunnel:<ul>
-<li>host: <strong>PUCLIC IP</strong></li>
-<li>port: 22 <em>(Default for ssh)</em></li>
-<li>Choose identity file: ssh pem file</li>
-</ul>
-</li>
-</ul>
 
                                 
                                 </section>
@@ -311,14 +267,10 @@ $ sudo apt install postgresql postgresql-contri
 
             
                 
-                <a href="postgresql-buffer.html" class="navigation navigation-prev " aria-label="Previous page: POSTGRESQL BUFFER">
+                <a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="navigation navigation-next " aria-label="Next page: SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -327,7 +279,7 @@ $ sudo apt install postgresql postgresql-contri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HOW TO INSTALL POSTGRESQL","level":"2.2","depth":1,"next":{"title":"SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices","level":"3.1","depth":1,"path":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","ref":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","articles":[]},"previous":{"title":"POSTGRESQL BUFFER","level":"2.1","depth":1,"path":"co-so-du-lieu/postgresql-buffer.md","ref":"co-so-du-lieu/postgresql-buffer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"co-so-du-lieu/postgres-buffer.md","mtime":"2021-02-02T16:31:56.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-03T15:24:28.267Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Hàm không truyền tham số","level":"4.1","depth":1,"previous":{"title":"SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices","level":"3.1","depth":1,"path":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","ref":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"golang/ham-khong-truyen-tham-so.md","mtime":"2021-02-03T15:23:54.758Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-03T15:24:28.267Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
