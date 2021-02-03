@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>HOW TO INSTALL POSTGRESQL · GitBook</title>
+        <title>POSTGRESQL BUFFER · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" />
+    <link rel="next" href="postgres-buffer.html" />
     
     
-    <link rel="prev" href="postgresql-buffer.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -109,7 +109,7 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="postgresql-buffer.html">
+        <li class="chapter active" data-level="2.1" data-path="postgresql-buffer.html">
             
                 <a href="postgresql-buffer.html">
             
@@ -122,7 +122,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2" data-path="postgres-buffer.html">
+        <li class="chapter " data-level="2.2" data-path="postgres-buffer.html">
             
                 <a href="postgres-buffer.html">
             
@@ -205,7 +205,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >HOW TO INSTALL POSTGRESQL</a>
+        <a href=".." >POSTGRESQL BUFFER</a>
     </h1>
 </div>
 
@@ -220,69 +220,52 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="how-to-install-postgresql">HOW TO INSTALL POSTGRESQL</h1>
-<h2 id="how-to-install-postgresql">HOW TO INSTALL POSTGRESQL</h2>
+                                <h1 id="postgresql-buffer">POSTGRESQL BUFFER</h1>
+<blockquote>
+<p><a href="https://online.grokking.org/articles/13/postgresql-buffer-hoat-dong-nhu-the-nao-" target="_blank">B&#xE0;i vi&#x1EBF;t g&#x1ED1;c</a></p>
+</blockquote>
+<h2 id="buffer-l&#xE0;-g&#xEC;-"><strong>Buffer l&#xE0; g&#xEC; ?</strong></h2>
 <ul>
-<li>Run command:<ul>
-<li><pre><code class="lang-bash">$ sudo apt update
-$ sudo apt install postgresql postgresql-contri
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Login to PostgreSQL<ul>
-<li>Switch to user postgres:<ul>
-<li><pre><code class="lang-bash">$ sudo -i -u postgres
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Login to Postgres:<ul>
-<li><pre><code class="lang-bash">$ psql
-</code></pre>
-</li>
+<li>Nguy&#xEA;n t&#x1EAF;c ho&#x1EA1;t &#x111;&#x1ED9;ng: &#x110;&#x1B0;a 1 ph&#x1EA7;n d&#x1EEF; li&#x1EC7;u th&#x1B0;&#x1EDD;ng d&#xF9;ng v&#xE0;o RAM &#x111;&#x1EC3; t&#x103;ng t&#x1ED1;c &#x111;&#x1ED9; truy xu&#x1EA5;t.</li>
+<li><strong>Ph&#xE2;n bi&#x1EC7;t v&#x1EDB;i cache:</strong><ul>
+<li>Cache l&#x1B0;u c&#xE1;c d&#x1EEF; li&#x1EC7;u &#x111;&#xE3; &#x111;u&#x1EE3;c x&#x1EED; l&#xFD; v&#xE0;o b&#x1ED9; nh&#x1EDB; t&#x1EA1;m (Ram ho&#x1EB7;c local storage c&#x1EE7;a ng&#x1B0;&#x1EDD;i s&#x1EED; d&#x1EE5;ng) -&gt; Ti&#x1EBF;t ki&#x1EC7;m th&#x1EDD;i gian <em>t&#xED;nh to&#xE1;n</em></li>
+<li>L&#x1B0;u d&#x1EEF; li&#x1EC7;u th&#xF4;, ph&#x1EE5;c v&#x1EE5; cho c&#xE1;c l&#x1EA7;n t&#xED;nh to&#xE1;n -&gt; Ti&#x1EBF;t ki&#x1EC7;m th&#x1EDD;i gian <em>truy xu&#x1EA5;t</em></li>
 </ul>
 </li>
 </ul>
-</li>
-<li>Create user:<ul>
-<li><pre><code class="lang-bash">$ createuser --interactive --pwpromt
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Create database:<ul>
-<li><pre><code class="lang-bash">$ createdb -O user dbname
-</code></pre>
-</li>
-</ul>
-</li>
-<li>Change config to connect by password from localhost<ul>
-<li>locate the pg_hba.conf file:<ul>
-<li>/etc/postgresql/12/main</li>
-</ul>
-</li>
-<li>edit:<ul>
-<li>local all all peer</li>
-<li>-&gt; local all all md5</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="connect-with-pgadmin">Connect with PGAdmin</h2>
+<h2 id="buffer-manager"><strong>Buffer Manager</strong>:</h2>
 <ul>
-<li>SSH<ul>
-<li>host: local</li>
-<li>post: 5432</li>
+<li>Th&#xE0;nh ph&#x1EA7;n ch&#xED;nh:<ul>
+<li>Buffer table</li>
+<li>Buffer descriptor: Qu&#x1EA3;n l&#xFD; metadata c&#x1EE7;a buffer slot</li>
+<li>Buffer pool:<ul>
+<li>1 array</li>
+<li>M&#x1ED7;i slot &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;p 1 buffer_id</li>
 </ul>
 </li>
-<li>SSH Tunnel:<ul>
-<li>host: <strong>PUCLIC IP</strong></li>
-<li>port: 22 <em>(Default for ssh)</em></li>
-<li>Choose identity file: ssh pem file</li>
 </ul>
 </li>
+<li>Buffer tag:<ul>
+<li>G&#x1ED3;m 3 s&#x1ED1;</li>
+<li>D&#xF9;ng &#x111;&#x1EC3; &#x111;&#x1ECB;nh dang page thu&#x1ED9;c table n&#xE0;o trong database</li>
+<li>Page th&#x1EE9; m&#x1EA5;y c&#x1EE7;a table</li>
+</ul>
+</li>
+</ul>
+<p><img src="../.gitbook/assets/postgresbuffer.png" alt="X&#x1EED; l&#xFD; query"></p>
+<h2 id="buffer-pool-&#x111;&#x1EA7;y"><strong>Buffer pool &#x111;&#x1EA7;y</strong>:</h2>
+<ul>
+<li>T&#x1EEB; phi&#xEA;n b&#x1EA3;n 8.1, s&#x1EED; d&#x1EE5;ng clock sweep, lo&#x1EA1;i b&#x1ECF; c&#xE1;c page th&#x1ECF;a m&#xE3;n<ul>
+<li>&#xCD;t &#x111;&#x1B0;&#x1EE3;c truy xu&#x1EA5;t nh&#x1EA5;t</li>
+<li>Kh&#xF4;ng c&#xF3; ti&#x1EBF;n tr&#xEC;nh n&#xE0;o &#x111;ang truy xu&#x1EA5;t page &#x111;&#xF3;</li>
+</ul>
+</li>
+</ul>
+<h2 id="c&#x1EAD;p-nh&#x1EAD;t-d&#x1EEF;-li&#x1EC7;u"><strong>C&#x1EAD;p nh&#x1EAD;t d&#x1EEF; li&#x1EC7;u</strong>:</h2>
+<ul>
+<li>D&#x1EEF; li&#x1EC7;u &#x111;&#x1B0;&#x1EE3;c c&#x1EAD;p nh&#x1EAD;t v&#xE0;o trong buffer (T&#x1EA1;o ra <strong>dirty page</strong>)</li>
+<li>Sau 1 th&#x1EDD;i gian, d&#x1EEF; li&#x1EC7;u &#x111;&#x1B0;&#x1EE3;c l&#x1B0;u l&#x1EA1;i xu&#x1ED1;ng disk (Flush dirty pages)</li>
+<li>&#x110;&#x1EC3; &#x111;&#x1EA3;m b&#x1EA3;o cho d&#x1EEF; li&#x1EC7;u, s&#x1EED; d&#x1EE5;ng WAL - Write Ahead Log &#x111;&#x1EC3; c&#x1EAD;p nh&#x1EAD;t l&#x1EA1;i n&#x1EBF;u b&#x1ECB; m&#x1EA5;t d&#x1EEF; li&#x1EC7;u &#x1EDF; c&#xE1;c <strong>dirty pages</strong>.</li>
 </ul>
 
                                 
@@ -311,12 +294,12 @@ $ sudo apt install postgresql postgresql-contri
 
             
                 
-                <a href="postgresql-buffer.html" class="navigation navigation-prev " aria-label="Previous page: POSTGRESQL BUFFER">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Giới thiệu">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="navigation navigation-next " aria-label="Next page: SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices">
+                <a href="postgres-buffer.html" class="navigation navigation-next " aria-label="Next page: HOW TO INSTALL POSTGRESQL">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -327,7 +310,7 @@ $ sudo apt install postgresql postgresql-contri
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"HOW TO INSTALL POSTGRESQL","level":"2.2","depth":1,"next":{"title":"SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices","level":"3.1","depth":1,"path":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","ref":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","articles":[]},"previous":{"title":"POSTGRESQL BUFFER","level":"2.1","depth":1,"path":"co-so-du-lieu/postgresql-buffer.md","ref":"co-so-du-lieu/postgresql-buffer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"co-so-du-lieu/postgres-buffer.md","mtime":"2021-02-02T16:31:56.204Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-03T15:24:28.267Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"POSTGRESQL BUFFER","level":"2.1","depth":1,"next":{"title":"HOW TO INSTALL POSTGRESQL","level":"2.2","depth":1,"path":"co-so-du-lieu/postgres-buffer.md","ref":"co-so-du-lieu/postgres-buffer.md","articles":[]},"previous":{"title":"Giới thiệu","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"co-so-du-lieu/postgresql-buffer.md","mtime":"2021-02-03T15:23:46.954Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-03T15:28:03.886Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
