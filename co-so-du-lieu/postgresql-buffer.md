@@ -22,7 +22,7 @@
   * Dùng để định dang page thuộc table nào trong database
   * Page thứ mấy của table
 
-![X&#x1EED; l&#xFD; query](../.gitbook/assets/postgresbuffer.png)
+![X&#x1EED; l&#xFD; query](../.gitbook/assets/postgresbuffer%20%282%29%20%282%29.png)
 
 ## **Buffer pool đầy**:
 
