@@ -38,11 +38,11 @@ jobs:
         run: |
         git config --local user.email "daedalust2713@gmail.com"
         git config --local user.name "daedalus2713"
-        git commit -m "Build book from gitbook" -a
+        git commit -m "Build book from gitbook" -a --allow-empty
       
     - name: github push
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUBTOKEN }}
-        branch: master
+      run: |
+        git remote set-url origin https://github.com/daedalus2713/daedalus2713.github.io.git
+        git fetch origin master
+        git push origin HEAD:master
         
