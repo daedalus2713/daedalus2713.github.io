@@ -1,0 +1,48 @@
+name: Rust
+
+on:
+  pull_request:
+    branches: [ master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+  
+    - name: cache cargo setup
+      id: cache-cargo-setup
+      uses: actions/cache@v2
+      with:
+        path: |
+         ~/.cargo/registry
+         ~/.cargo/bin
+         ~/.cargo/git
+         ~/.cargo
+           target
+        key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+    - name: cargo setup
+      if: steps.cache-cargo-setup.cache-hit != 'true'
+      run: test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update && test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook && cargo install-update -a
+    
+    - name: build book
+      run: ./genbook.sh
+      shell: bash
+    
+    - name: commit github master
+      run: |
+        run: |
+        git config --local user.email "daedalust2713@gmail.com"
+        git config --local user.name "daedalus2713"
+        git commit -m "Build book from gitbook" -a --allow-empty
+      
+    - name: github push
+      run: |
+        git remote set-url origin https://github.com/daedalus2713/daedalus2713.github.io.git
+        git fetch origin master
+        git push origin HEAD:master
+        
