@@ -1,4 +1,4 @@
 #!/bin/bash
 
 gitbook build;
-mv _book docs;
+mv _book/ docs/;
