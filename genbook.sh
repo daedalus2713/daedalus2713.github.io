@@ -1,4 +1,11 @@
 #!/bin/bash
 
+mkdir _book;
+cp -rlf docs/* _book;
+rm -rf docs;
 gitbook build;
-mv _book/ docs/;
+shopt -s dotglob;
+mkdir docs;
+cp -rlf _book/* docs;
+rm -rf _book;
+touch ./docs/.nojekyll;
