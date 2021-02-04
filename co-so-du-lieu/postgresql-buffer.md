@@ -22,6 +22,8 @@
   * Dùng để định dang page thuộc table nào trong database
   * Page thứ mấy của table
 
+![](../.gitbook/assets/postgresbuffer.png)
+
 ## **Buffer pool đầy**:
 
 * Từ phiên bản 8.1, sử dụng clock sweep, loại bỏ các page thỏa mãn
