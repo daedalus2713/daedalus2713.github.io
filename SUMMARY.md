@@ -20,3 +20,7 @@
 * [Operating Systems: Three Easy Pieces](he-dieu-hanh/operating-systems-three-easy-pieces/README.md)
   * [Giới thiệu](he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md)
 
+## Golang <a id="golang-1"></a>
+
+* [Lưu ý khi function trả về](golang-1/luu-y-khi-function-tra-ve.md)
+
