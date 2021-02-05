@@ -11,6 +11,11 @@ func (e *ExampleStruct) Print() {
 
 
 func Example(param1 int, param2 int) (result *ExampleStruct, err error) {    
+    // check error
+    if param1 < 0 {
+        return nil, errors.New("Negative")
+    }
+    
     // do sth with the param
     tmp := param1 + param2
 
