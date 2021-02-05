@@ -13,6 +13,7 @@
 
 ## Golang
 
+* [GC không thu dọn bộ nhớ](golang/gc-khong-thu-don-bo-nho.md)
 * [Hàm không truyền tham số](golang/ham-khong-truyen-tham-so.md)
 
 ## Hệ điều hành
