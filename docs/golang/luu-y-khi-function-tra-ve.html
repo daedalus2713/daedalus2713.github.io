@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices · GitBook</title>
+        <title>Lưu ý khi function trả về · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../golang/luu-y-khi-function-tra-ve.html" />
+    <link rel="next" href="gc-khong-thu-don-bo-nho.html" />
     
     
-    <link rel="prev" href="../co-so-du-lieu/postgres-buffer.html" />
+    <link rel="prev" href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" />
     
 
     </head>
@@ -142,9 +142,9 @@
         
         
     
-        <li class="chapter active" data-level="3.1" data-path="summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">
+        <li class="chapter " data-level="3.1" data-path="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">
             
-                <a href="summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">
+                <a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html">
             
                     
                     SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices
@@ -162,9 +162,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../golang/luu-y-khi-function-tra-ve.html">
+        <li class="chapter active" data-level="4.1" data-path="luu-y-khi-function-tra-ve.html">
             
-                <a href="../golang/luu-y-khi-function-tra-ve.html">
+                <a href="luu-y-khi-function-tra-ve.html">
             
                     
                     Lưu ý khi function trả về
@@ -175,9 +175,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.2" data-path="../golang/gc-khong-thu-don-bo-nho.html">
+        <li class="chapter " data-level="4.2" data-path="gc-khong-thu-don-bo-nho.html">
             
-                <a href="../golang/gc-khong-thu-don-bo-nho.html">
+                <a href="gc-khong-thu-don-bo-nho.html">
             
                     
                     GC không thu dọn bộ nhớ
@@ -188,9 +188,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="../golang/ham-khong-truyen-tham-so.html">
+        <li class="chapter " data-level="4.3" data-path="ham-khong-truyen-tham-so.html">
             
-                <a href="../golang/ham-khong-truyen-tham-so.html">
+                <a href="ham-khong-truyen-tham-so.html">
             
                     
                     Hàm không truyền tham số
@@ -270,7 +270,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices</a>
+        <a href=".." >Lưu ý khi function trả về</a>
     </h1>
 </div>
 
@@ -285,94 +285,45 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="summary-11-reasons-why-you-are-going-to-fail-with-microservices">SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices</h1>
-<blockquote>
-<p><a href="https://medium.com/xebia-engineering/11-reasons-why-you-are-going-to-fail-with-microservices-29b93876268b" target="_blank">Link</a></p>
-</blockquote>
-<h2 id="tldr">TLDR:</h2>
+                                <h1 id="l&#x1B0;u-&#xFD;-khi-function-tr&#x1EA3;-v&#x1EC1;">L&#x1B0;u &#xFD; khi function tr&#x1EA3; v&#x1EC1;</h1>
+<pre><code class="lang-go"><span class="hljs-keyword">type</span> ExampleStruct <span class="hljs-keyword">struct</span> {
+    Value <span class="hljs-keyword">int</span>
+}
+
+<span class="hljs-keyword">func</span> (e *ExampleStruct) Print() {
+    fmt.Println(e.Value)
+}    
+
+
+<span class="hljs-keyword">func</span> Example(param1 <span class="hljs-keyword">int</span>, param2 <span class="hljs-keyword">int</span>) (result *ExampleStruct, err error) {    
+    <span class="hljs-comment">// check error</span>
+    <span class="hljs-keyword">if</span> param1 &lt; <span class="hljs-number">0</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span>, errors.New(<span class="hljs-string">&quot;Negative&quot;</span>)
+    }
+
+    <span class="hljs-comment">// do sth with the param</span>
+    tmp := param1 + param2
+
+    result.Print()     <span class="hljs-comment">// panic: nil pointer</span>
+    result.Value = tmp <span class="hljs-comment">// painc: nil pointer</span>
+
+    <span class="hljs-comment">// allocate the result (method 1)</span>
+    result = <span class="hljs-built_in">new</span>(ExampleStruct)
+    result.Value = tmp
+
+    <span class="hljs-comment">// allocate the result (method 2)</span>
+    result = &amp;ExampleStruct{
+        Value: tmp,
+    }
+
+    <span class="hljs-keyword">return</span> result, <span class="hljs-literal">nil</span>
+}
+</code></pre>
+<p>Khi khai b&#xE1;o con tr&#x1ECF; trong bi&#x1EBF;n tr&#x1EA3; v&#x1EC1;, Go ch&#x1B0;a t&#x1EA1;o ra object &#x111;&#xF3;.<br>Cho n&#xEA;n khi g&#xE1;n gi&#xE1; tr&#x1ECB; cho object &#x111;&#xF3; ho&#x1EB7;c g&#x1ECD;i c&#xE1;c h&#xE0;m trong object, Go s&#x1EBD; t&#x1EA1;o ra th&#xF4;ng b&#xE1;o nil pointer.</p>
+<p>V&#x1EAD;y c&#x1EA7;n ph&#x1EA3;i kh&#x1EDF;i t&#x1EA1;o bi&#x1EBF;n tr&#x1EA3; v&#x1EC1; &#x111;&#x1EC3; tr&#xE1;nh vi&#x1EC7;c b&#x1ED9; nh&#x1EDB; kh&#xF4;ng &#x111;&#x1B0;&#x1EE3;c c&#x1EA5;p ph&#xE1;t cho bi&#x1EBF;n &#x111;&#xF3; trong ch&#x1B0;&#x1A1;ng tr&#xEC;nh.</p>
+<p>L&#x1B0;u &#xFD;, c&#x1EA7;n khai b&#xE1;o bi&#x1EBF;n h&#x1EE3;p l&#xFD; &#x111;&#x1EC3; tr&#xE1;nh vi&#x1EC7;c c&#x1EA5;p ph&#xE1;t b&#x1ED9; nh&#x1EDB; kh&#xF4;ng c&#x1EA7;n thi&#x1EBF;t.</p>
 <ul>
-<li>Consider about using microservice architectures:<ul>
-<li>Hard on local developments.</li>
-<li>Fragment in technologies and versions.</li>
-<li>Lack of visibility in architectures.</li>
-</ul>
-</li>
-<li>Use tool to automation process.</li>
-<li>Communication between services and developers.</li>
-</ul>
-<h2 id="1-complexity"><strong>1. Complexity</strong></h2>
-<ul>
-<li>Need a productive local environment setup.</li>
-<li>Need good development machine.</li>
-<li>Build the entire application on a new machine without much configuration.</li>
-<li>Should use multiple docker-compose files to spin up different services.</li>
-</ul>
-<h2 id="2-no-update-libraries-and-tools-process"><strong>2. No update libraries and tools process</strong></h2>
-<ul>
-<li>Become a technical debt.</li>
-<li>Keep dependency versions in sync for all the services.</li>
-<li>Create technical debt items for these upgrades in their backlog.</li>
-</ul>
-<h2 id="3-use-shared-service"><strong>3. Use shared service</strong></h2>
-<ul>
-<li>Example: shared database<ul>
-<li>Developer can wipe out data written by another.</li>
-<li>Experimentation as their work can impact some other.</li>
-<li>Difficult to test changes in isolation.</li>
-<li>Lose the traceability of the changes.</li>
-<li>Difficult to work when you are not online.</li>
-</ul>
-</li>
-</ul>
-<h2 id="4-lack-of-visibility-in-version-control"><strong>4. Lack of visibility in version control</strong></h2>
-<ul>
-<li>Group Microservices in some way from the start.</li>
-</ul>
-<h2 id="5-no-clear-definition"><strong>5. No clear definition</strong></h2>
-<ul>
-<li>Have few large services than to have too many small services.</li>
-<li>Break a domain into subdomains and bounded contexts.</li>
-<li><p>Should only communicate through the published contracts.</p>
-<blockquote>
-<p>If two pieces of information are dependent on each other, they should belong to a single server. In other words, the natural boundaries for a service should be the natural boundaries of its data.</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="6-no-clear-strategy-on-code-reuse"><strong>6. No clear strategy on code reuse</strong></h2>
-<ul>
-<li>Copy and paste code -&gt; need to applied fix multiple times.</li>
-<li>Use an artifact manager like Bintray or Nexus and publish dependencies.</li>
-<li>Tooling to make it easy to upgrade Microservices so that a human does not have to do this.</li>
-</ul>
-<h2 id="7-polyglot-programming"><strong>7. Polyglot programming</strong></h2>
-<ul>
-<li>Use multiples technologies -&gt; Hard to maintain and share knowlegde.</li>
-<li>Need to Publishes a list of languages that teams can use.</li>
-<li>Think before you choose a language.</li>
-</ul>
-<h2 id="8-people-dependency"><strong>8. People dependency</strong></h2>
-<ul>
-<li>teams don&#x2019;t understand the complete ecosystem.</li>
-<li>Create overall architecture team roadmap and goals.</li>
-</ul>
-<h2 id="9-lack-of-documentation"><strong>9. Lack of documentation</strong></h2>
-<ul>
-<li>Minimum:<ul>
-<li>Design documents.</li>
-<li>Context and container diagrams.</li>
-<li>Keeping track of key architecture decisions.</li>
-<li>Developer onboarding guide.</li>
-</ul>
-</li>
-</ul>
-<h2 id="10-feature-over-platform-maturity"><strong>10. Feature over platform maturity</strong></h2>
-<ul>
-<li>Features built on a weak platform fail to deliver value.</li>
-<li>Need to get into the platform mentality.</li>
-</ul>
-<h2 id="11-lack-of-automated-testing"><strong>11. Lack of automated testing</strong></h2>
-<ul>
-<li>Automation testing is in the overall quality of the product</li>
+<li>Khai b&#xE1;o tr&#x1B0;&#x1EDB;c khi ki&#x1EC3;m tra error (th&#x1B0;&#x1EDD;ng s&#x1EBD; tr&#x1EA3; v&#x1EC1; nil, err n&#x1EBF;u c&#xF3; l&#x1ED7;i) </li>
 </ul>
 
                                 
@@ -401,12 +352,12 @@
 
             
                 
-                <a href="../co-so-du-lieu/postgres-buffer.html" class="navigation navigation-prev " aria-label="Previous page: HOW TO INSTALL POSTGRESQL">
+                <a href="../he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.html" class="navigation navigation-prev " aria-label="Previous page: SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../golang/luu-y-khi-function-tra-ve.html" class="navigation navigation-next " aria-label="Next page: Lưu ý khi function trả về">
+                <a href="gc-khong-thu-don-bo-nho.html" class="navigation navigation-next " aria-label="Next page: GC không thu dọn bộ nhớ">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -417,7 +368,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices","level":"3.1","depth":1,"next":{"title":"Lưu ý khi function trả về","level":"4.1","depth":1,"path":"golang/luu-y-khi-function-tra-ve.md","ref":"golang/luu-y-khi-function-tra-ve.md","articles":[]},"previous":{"title":"HOW TO INSTALL POSTGRESQL","level":"2.2","depth":1,"path":"co-so-du-lieu/postgres-buffer.md","ref":"co-so-du-lieu/postgres-buffer.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","mtime":"2021-02-02T16:30:56.084Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-07T08:45:22.418Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lưu ý khi function trả về","level":"4.1","depth":1,"next":{"title":"GC không thu dọn bộ nhớ","level":"4.2","depth":1,"path":"golang/gc-khong-thu-don-bo-nho.md","ref":"golang/gc-khong-thu-don-bo-nho.md","articles":[]},"previous":{"title":"SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices","level":"3.1","depth":1,"path":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","ref":"he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"golang/luu-y-khi-function-tra-ve.md","mtime":"2021-02-07T08:44:26.273Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-07T08:45:22.418Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
