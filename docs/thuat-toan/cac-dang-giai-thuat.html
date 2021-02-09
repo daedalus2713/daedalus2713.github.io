@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>GC không thu dọn bộ nhớ · GitBook</title>
+        <title>Các dạng giải thuật · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="ham-khong-truyen-tham-so.html" />
     
-    
-    <link rel="prev" href="luu-y-khi-function-tra-ve.html" />
+    <link rel="prev" href="../he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.html" />
     
 
     </head>
@@ -162,9 +160,9 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="luu-y-khi-function-tra-ve.html">
+        <li class="chapter " data-level="4.1" data-path="../golang/luu-y-khi-function-tra-ve.html">
             
-                <a href="luu-y-khi-function-tra-ve.html">
+                <a href="../golang/luu-y-khi-function-tra-ve.html">
             
                     
                     Lưu ý khi function trả về
@@ -175,9 +173,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.2" data-path="gc-khong-thu-don-bo-nho.html">
+        <li class="chapter " data-level="4.2" data-path="../golang/gc-khong-thu-don-bo-nho.html">
             
-                <a href="gc-khong-thu-don-bo-nho.html">
+                <a href="../golang/gc-khong-thu-don-bo-nho.html">
             
                     
                     GC không thu dọn bộ nhớ
@@ -188,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3" data-path="ham-khong-truyen-tham-so.html">
+        <li class="chapter " data-level="4.3" data-path="../golang/ham-khong-truyen-tham-so.html">
             
-                <a href="ham-khong-truyen-tham-so.html">
+                <a href="../golang/ham-khong-truyen-tham-so.html">
             
                     
                     Hàm không truyền tham số
@@ -247,9 +245,9 @@
         
         
     
-        <li class="chapter " data-level="6.1" data-path="../thuat-toan/cac-dang-giai-thuat.html">
+        <li class="chapter active" data-level="6.1" data-path="cac-dang-giai-thuat.html">
             
-                <a href="../thuat-toan/cac-dang-giai-thuat.html">
+                <a href="cac-dang-giai-thuat.html">
             
                     
                     Các dạng giải thuật
@@ -290,7 +288,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >GC không thu dọn bộ nhớ</a>
+        <a href=".." >Các dạng giải thuật</a>
     </h1>
 </div>
 
@@ -305,26 +303,60 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="gc-kh&#xF4;ng-thu-d&#x1ECD;n-b&#x1ED9;-nh&#x1EDB;">GC kh&#xF4;ng thu d&#x1ECD;n b&#x1ED9; nh&#x1EDB;</h1>
-<p>G&#x1EA7;n &#x111;&#xE2;y m&#xEC;nh g&#x1EB7;p m&#x1ED9;t tr&#x1B0;&#x1EDD;ng h&#x1EE3;p kh&#xE1; th&#xFA; v&#x1ECB; &#x111;&#xF3; l&#xE0; khi ghi file b&#x1EB1;ng I/O buffer th&#xEC; d&#xF9; l&#xE0;m ki&#x1EC3;u g&#xEC; c&#x169;ng kh&#xF4;ng th&#x1EC3; gi&#x1EA3;m &#x111;&#x1B0;&#x1EE3;c b&#x1ED9; nh&#x1EDB; c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh. D&#xF9; &#x111;&#xE3; ki&#x1EC3;m tra t&#x1EEB;ng h&#xE0;m &#x111;&#x1ECD;c, ghi file v&#xE0; g&#x1ECD;i c&#x1EA3; runtime.GC() nh&#x1B0;ng b&#x1ED9; nh&#x1EDB; v&#x1EAB;n kh&#xF4;ng thay &#x111;&#x1ED5;i v&#xE0; t&#x103;ng nhi&#x1EC1;u h&#x1A1;n.</p>
-<p> Sau &#x111;&#xF3; m&#xEC;nh c&#xF3; t&#xEC;m &#x111;&#x1B0;&#x1EE3;c m&#x1ED9;t issue tr&#xEA;n github c&#x1EE7;a go n&#xF3;i v&#x1EC1; v&#x1EA5;n &#x111;&#x1EC1; n&#xE0;y: <a href="https://github.com/golang/go/issues/41818" target="_blank">https://github.com/golang/go/issues/41818</a></p>
-<p>&#x1EDE; &#x111;&#xE2;y gi&#x1EA3;i th&#xED;ch r&#x1EB1;ng, m&#x1ED7;i khi GC d&#x1ECD;n xong v&#xE0; c&#xF3; page tr&#x1ED1;ng th&#xEC; n&#xF3; s&#x1EBD; g&#x1ECD;i m&#x1ED9;t system call l&#xE0; <strong>madvise(2)</strong>, h&#xE0;m n&#xE0;y s&#x1EBD; th&#xF4;ng b&#xE1;o cho H&#x110;H r&#x1EB1;ng n&#xF3; c&#xF3; th&#x1EC3; l&#x1EA5;y page &#x111;&#xF3; m&#xE0; kh&#xF4;ng c&#x1EA7;n ph&#x1EA3;i chuy&#x1EC3;n d&#x1EEF; li&#x1EC7;u xu&#x1ED1;ng &#x111;&#x129;a.<br>C&#x1A1; ch&#x1EBF; n&#xE0;y g&#x1EA7;n gi&#x1ED1;ng c&#x1A1; ch&#x1EBF; x&#xF3;a file, H&#x110;H s&#x1EBD; &#x111;&#xE1;nh d&#x1EA5;u c&#xE1;c &#xF4; nh&#x1EDB; l&#xE0; c&#xF3; th&#x1EC3; ghi &#x111;&#xE8; &#x111;&#x1B0;&#x1EE3;c ch&#x1EE9; kh&#xF4;ng ph&#x1EA3;i chuy&#x1EC3;n to&#xE0;n b&#x1ED9; c&#xE1;c &#xF4; nh&#x1EDB; &#x111;&#xF3; v&#x1EC1; 0.</p>
+                                <h1 id="c&#xE1;c-d&#x1EA1;ng-gi&#x1EA3;i-thu&#x1EAD;t">C&#xE1;c d&#x1EA1;ng gi&#x1EA3;i thu&#x1EAD;t</h1>
+<h2 id="quay-lui">Quay lui</h2>
+<p>_ T&#x1B0; t&#x1B0;&#x1EDF;ng: Sinh ra to&#xE0;n b&#x1ED9; c&#xE1;c nghi&#x1EC7;m c&#xF3; th&#x1EC3; v&#xE0; ki&#x1EC3;m tra xem c&#xF3; &#x111;&#xFA;ng v&#x1EDB;i y&#xEA;u c&#x1EA7;u &#x111;&#x1EC1; b&#xE0;i kh&#xF4;ng</p>
+<pre><code class="lang-text">// Si: tap cac phan tu thu i
+Procedure Backtrack(i);
+begin
+    &lt; Xac dinh Si &gt;;
+    for xi in Si do 
+    begin
+        &lt; ghi nhan thanh phan thu i &gt;;
+        if (tim thay nghiem) then &lt; Dua ra nghiem &gt;
+        else Backtrack(i+1);
+        &lt; Loai thanh phan thu i &gt;
+    end;
+end;
+</code></pre>
+<h2 id="nh&#xE1;nh-c&#x1EAD;n">Nh&#xE1;nh c&#x1EAD;n</h2>
+<p>_ T&#x1B0; t&#x1B0;&#x1EDF;ng: Gi&#x1ED1;ng v&#x1EDB;i quay lui, tuy nhi&#xEA;n c&#xF3; s&#x1EED; d&#x1EE5;ng m&#x1ED9;t h&#xE0;m f(x) &#x111;&#x1EC3; x&#xE1;c &#x111;&#x1ECB;nh &#x111;&#x1ED9; t&#x1ED1;t &#x111;&#x1EC3; x&#xE1;c &#x111;&#x1ECB;nh nghi&#x1EC7;m c&#x1EE7;a b&#xE0;i to&#xE1;n v&#xE0; c&#x1EA7;n t&#xEC;m nghi&#x1EC7;m sau cho h&#xE0;m f(x) cho k&#x1EBF;t qu&#x1EA3; t&#x1ED1;t nh&#x1EA5;t:</p>
 <ul>
-<li>N&#x1EBF;u H&#x110;H l&#x1EA5;y page &#x111;&#xF3; do thi&#x1EBF;u b&#x1ED9; nh&#x1EDB;,  n&#xF3; s&#x1EBD; gi&#x1EA3;m gi&#xE1; tr&#x1ECB; RSS(*) c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh.</li>
-<li>N&#x1EBF;u kh&#xF4;ng, n&#xF3; s&#x1EBD; b&#x1ECF; qua l&#x1EDD;i g&#x1ECD;i h&#x1EC7; th&#x1ED1;ng v&#xE0; page s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c gi&#x1EEF; nguy&#xEA;n. &#x1EDE; &#x111;&#xE2;y s&#x1EBD; g&#xE2;y ra hi&#x1EC7;n t&#x1B0;&#x1EE3;ng r&#x1EB1;ng d&#xF9; GC &#x111;&#xE3; ch&#x1EA1;y v&#xE0; page l&#xE0; free, nh&#x1B0;ng ch&#x1B0;&#x1A1;ng tr&#xEC;nh v&#x1EAB;n chi&#x1EBF;m r&#x1EA5;t nhi&#x1EC1;u b&#x1ED9; nh&#x1EDB;.</li>
+<li>N&#x1EBF;u t&#xEC;m &#x111;&#x1B0;&#x1EE3;c nghi&#x1EC7;m t&#x1ED1;t h&#x1A1;n: c&#x1EAD;p nh&#x1EAD;t f(x)</li>
+<li>T&#xEC;m &#x111;&#x1B0;&#x1EE3;c nghi&#x1EC7;m c&#xF3; &#x111;&#x1ED9; t&#x1ED1;t k&#xE9;m h&#x1A1;n: kh&#xF4;ng c&#x1EA7;n m&#x1EDF; r&#x1ED9;ng t&#x1EAD;p nghi&#x1EC7;m</li>
 </ul>
-<p>&#x110;&#x1EC3; kh&#x1EAF;c ph&#x1EE5;c v&#x1EA5;n &#x111;&#x1EC1; n&#xE0;y, ch&#xFA;ng ta c&#xF3; th&#x1EC3; g&#x1ECD;i <strong>madvise(MADV_DONTNEED)</strong> &#x111;&#x1EC3; ch&#x1EC9;nh s&#x1EED;a RSS c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh, hay n&#xF3;i c&#xE1;ch kh&#xE1;c, l&#xE0; H&#x110;H s&#x1EBD; lu&#xF4;n l&#x1EA5;y l&#x1EA1;i c&#xE1;c page free g&#x1ECD;i h&#xE0;m n&#xE0;y.</p>
-<p>Trong Go, &#x111;&#x1EC3; th&#x1EF1;c hi&#x1EC7;n gi&#x1EA3;i ph&#xE1;p n&#xF3;i tr&#xEA;n. Ch&#xFA;ng ta c&#xF3; th&#x1EC3; s&#x1EED; d&#x1EE5;ng:</p>
+<pre><code class="lang-text">Procedure BranchBound(i);
+begin
+    &lt; danh gia cac nghiem mo rong &gt;;
+    if ( nghiem mo rong khong toi hon BestSolution) then exit;
+    &lt; Xac dinh Si &gt;;
+    for xi in Si do
+    begin
+        &lt; ghi nhan thanh phan thu i &gt;;
+        if (tim thay nghiem) then &lt; cap nhat BestSolution &gt; else BranchBound(i+1);
+        &lt; loai thanh phan i &gt;;
+    end;
+end;
+</code></pre>
+<h2 id="tham-&#x103;n">Tham &#x103;n</h2>
+<p>_ T&#x1B0; t&#x1B0;&#x1EDF;ng: </p>
 <ul>
-<li>Set the enviroment GODEBUG=madvdontneed=1. </li>
-<li>Use the function debug.FreeOSMemory().</li>
+<li>X&#xE2;y d&#x1EF1;ng t&#x1EAD;p nghi&#x1EC7;m t&#x1EEB;ng b&#x1B0;&#x1EDB;c</li>
+<li>Khi m&#x1EDF; r&#x1ED9;ng t&#x1EAD;p nghi&#x1EC7;m, ch&#x1ECD;n ra xi t&#x1ED1;t nh&#x1EA5;t &#x111;&#x1EC3; th&#xEA;m v&#xE0;o t&#x1EAD;p nghi&#x1EC7;m</li>
+<li><strong>L&#x1B0;u &#xFD;: c&#xF3; th&#x1EC3; ch&#x1EC9; t&#xEC;m &#x111;&#x1B0;&#x1EE3;c nghi&#x1EC7;m g&#x1EA7;n &#x111;&#xFA;ng v&#x1EDB;i nghi&#x1EC7;m t&#x1ED1;i &#x1B0;u</strong></li>
 </ul>
-<h2 id="&#x111;&#xF4;i-&#x111;i&#x1EC1;u-v&#x1EC1;-h&#xE0;m-madvise">&#x110;&#xF4;i &#x111;i&#x1EC1;u v&#x1EC1; h&#xE0;m madvise()</h2>
-<p>Reference: <a href="https://man7.org/linux/man-pages/man2/madvise.2.html" target="_blank">https://man7.org/linux/man-pages/man2/madvise.2.html</a></p>
-<p>Ch&#x1EE9;c n&#x103;ng: &#x111;&#x1B0;a ra ch&#x1EC9; d&#x1EAB;n ho&#x1EB7;c g&#x1EE3;i &#xFD; cho kernel v&#x1EC1; m&#x1ED9;t v&#xF9;ng nh&#x1EDB;. Th&#xF4;ng qua c&#xE1;c gi&#xE1; tr&#x1ECB; g&#x1EE3;i &#xFD; (conventional advice values)</p>
-<p><strong>MADV_DONTNEED</strong>: c&#xF3; ngh&#x129;a r&#x1EB1;ng ch&#x1B0;&#x1A1;ng tr&#xEC;nh s&#x1EBD; kh&#xF4;ng c&#x1EA7;n &#x111;&#x1EBF;n v&#xF9;ng nh&#x1EDB; &#x111;&#xF3;, H&#x110;H c&#xF3; th&#x1EC3; d&#x1ECD;n lu&#xF4;n ngay khi g&#x1ECD;i h&#xE0;m. Tuy nhi&#xEA;n, vi&#x1EC7;c n&#xE0;y c&#xF3; th&#x1EC3; l&#xE0;m cho chi ph&#xED; c&#x1EE7;a nh&#x1EEF;ng l&#x1EA7;n page fault cao h&#x1A1;n v&#xE0; t&#x1ED1;n th&#x1EDD;i gian &#x111;&#x1EC3; H&#x110;H c&#x1EA5;p l&#x1EA1;i b&#x1ED9; nh&#x1EDB; cho ti&#x1EBF;n tr&#xEC;nh &#x111;&#xF3;.  </p>
-<h2 id="gi&#x1EA3;i-th&#xED;ch">Gi&#x1EA3;i th&#xED;ch</h2>
-<p>(1) <strong>RSS</strong> is the Resident Set Size and is used to show how much memory is allocated to that process and is in RAM. This is not a measure of how much memory is a program using, it is the resident segment size -- the current amount of memory in core for the process.</p>
+<pre><code class="lang-text">Procedure Greedy;
+begin
+    X := nil;
+    i := 0;
+    while (chua xay dung xong het thanh phan cua nghiem) do
+    begin
+        i := i + 1;
+        &lt; Xac dinh Si &gt;;
+        X &lt;- selectBest(Si);
+    end;
+end;
+</code></pre>
 
                                 
                                 </section>
@@ -352,14 +384,10 @@
 
             
                 
-                <a href="luu-y-khi-function-tra-ve.html" class="navigation navigation-prev " aria-label="Previous page: Lưu ý khi function trả về">
+                <a href="../he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Giới thiệu">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="ham-khong-truyen-tham-so.html" class="navigation navigation-next " aria-label="Next page: Hàm không truyền tham số">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -368,7 +396,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GC không thu dọn bộ nhớ","level":"4.2","depth":1,"next":{"title":"Hàm không truyền tham số","level":"4.3","depth":1,"path":"golang/ham-khong-truyen-tham-so.md","ref":"golang/ham-khong-truyen-tham-so.md","articles":[]},"previous":{"title":"Lưu ý khi function trả về","level":"4.1","depth":1,"path":"golang/luu-y-khi-function-tra-ve.md","ref":"golang/luu-y-khi-function-tra-ve.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"golang/gc-khong-thu-don-bo-nho.md","mtime":"2021-02-07T08:44:26.269Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-09T10:12:22.394Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Các dạng giải thuật","level":"6.1","depth":1,"previous":{"title":"Giới thiệu","level":"5.1.1","depth":2,"path":"he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md","ref":"he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"thuat-toan/cac-dang-giai-thuat.md","mtime":"2021-02-09T10:12:13.138Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-09T10:12:22.394Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
