@@ -41,7 +41,7 @@ begin
 end;
 ```
 
-## Tham ăn:
+## Tham ăn
 
 \_ Tư tưởng: 
 
