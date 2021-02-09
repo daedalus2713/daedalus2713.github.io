@@ -22,3 +22,7 @@
 * [Operating Systems: Three Easy Pieces](he-dieu-hanh/operating-systems-three-easy-pieces/README.md)
   * [Giới thiệu](he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md)
 
+## Thuật toán
+
+* [Các dạng giải thuật](thuat-toan/cac-dang-giai-thuat.md)
+
