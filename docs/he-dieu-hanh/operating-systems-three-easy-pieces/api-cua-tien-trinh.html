@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Operating Systems: Three Easy Pieces · GitBook</title>
+        <title>API của tiến trình · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Tóm tắt sách, ghi lại một số lưu ý quan trọng">
+        <meta name="description" content="Các API thực tế, thường được dùng trong các hệ điều hành UNIX">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="gioi-thieu.html" />
+    <link rel="next" href="../../thuat-toan/cac-dang-giai-thuat.html" />
     
     
-    <link rel="prev" href="../../golang/ham-khong-truyen-tham-so.html" />
+    <link rel="prev" href="tien-trinh-process.html" />
     
 
     </head>
@@ -208,7 +208,7 @@
         
         
     
-        <li class="chapter active" data-level="5.1" data-path="./">
+        <li class="chapter " data-level="5.1" data-path="./">
             
                 <a href="./">
             
@@ -248,7 +248,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.1.3" data-path="api-cua-tien-trinh.html">
+        <li class="chapter active" data-level="5.1.3" data-path="api-cua-tien-trinh.html">
             
                 <a href="api-cua-tien-trinh.html">
             
@@ -316,7 +316,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Operating Systems: Three Easy Pieces</a>
+        <a href="../.." >API của tiến trình</a>
     </h1>
 </div>
 
@@ -331,8 +331,29 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="operating-systems-three-easy-pieces">Operating Systems: Three Easy Pieces</h1>
-<p>Link s&#xE1;ch free: <a href="https://pages.cs.wisc.edu/~remzi/OSTEP/#book-chapters" target="_blank">https://pages.cs.wisc.edu/~remzi/OSTEP/#book-chapters</a></p>
+                                <h1 id="api-c&#x1EE7;a-ti&#x1EBF;n-tr&#xEC;nh">API c&#x1EE7;a ti&#x1EBF;n tr&#xEC;nh</h1>
+<h2 id="1-l&#x1EDD;i-g&#x1ECD;i-h&#xE0;m-fork">1. L&#x1EDD;i g&#x1ECD;i h&#xE0;m fork():</h2>
+<p>D&#xF9;ng &#x111;&#x1EC3; t&#x1EA1;o m&#x1ED9;t ti&#x1EBF;n tr&#xEC;nh m&#x1EDB;i. Ti&#x1EBF;n tr&#xEC;nh m&#x1EDB;i &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o ra g&#x1EA7;n nh&#x1B0; l&#xE0; m&#x1ED9;t b&#x1EA3;n sao ho&#xE0;n ch&#x1EC9;nh c&#x1EE7;a ti&#x1EBF;n tr&#xEC;nh g&#x1ECD;i h&#xE0;m fork(), d&#xF9; ti&#x1EBF;n tr&#xEC;nh con c&#xF3; v&#xF9;ng nh&#x1EDB; ri&#xEA;ng, thanh ghi ri&#xEA;ng,....</p>
+<p>Khi h&#xE0;m n&#xE0;y &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i th&#xE0;nh c&#xF4;ng:</p>
+<ul>
+<li>Ti&#x1EBF;n tr&#xEC;nh cha s&#x1EBD; nh&#x1EAD;n &#x111;&#x1B0;&#x1EE3;c ID c&#x1EE7;a ti&#x1EBF;n tr&#xEC;nh con</li>
+<li>Ti&#x1EBF;n tr&#xEC;nh con s&#x1EBD; nh&#x1EAD;n &#x111;&#x1B0;&#x1EE3;c m&#xE3; tr&#x1EA3; v&#x1EC1; l&#xE0; 0 </li>
+</ul>
+<p>Khi ti&#x1EBF;n tr&#xEC;nh con &#x111;&#x1B0;&#x1EE3;c t&#x1EA1;o m&#x1EDB;i, b&#x1ED9; x&#x1EBF;p l&#x1ECB;ch c&#x1EE7;a CPU s&#x1EBD; s&#x1EAF;p x&#x1EBF;p th&#x1EE9; t&#x1EF1; ch&#x1EA1;y c&#x1EE7;a c&#xE1;c ti&#x1EBF;n tr&#xEC;nh, c&#xF3; th&#x1EC3; d&#x1EAB;n t&#x1EDB;i c&#xE1;c kh&#xF3; kh&#x103;n trong l&#x1EAD;p tr&#xEC;nh &#x111;a lu&#x1ED3;ng.</p>
+<h2 id="2-l&#x1EDD;i-g&#x1ECD;i-h&#xE0;m-wait">2. L&#x1EDD;i g&#x1ECD;i h&#xE0;m wait():</h2>
+<p> D&#xF9;ng &#x111;&#x1EC3; ti&#x1EBF;n tr&#xEC;nh cha &#x111;&#x1EE3;i cho ti&#x1EBF;n tr&#xEC;nh con xong vi&#x1EC7;c r&#x1ED3;i m&#x1EDB;i ti&#x1EBF;p t&#x1EE5;c th&#x1EF1;c thi.</p>
+<p>H&#xE0;m n&#xE0;y s&#x1EBD; tr&#x1EA3; v&#x1EC1; gi&#xE1; tr&#x1ECB; khi ti&#x1EBF;n tr&#xEC;nh con th&#x1EF1;c thi xong. </p>
+<p>L&#x1EDD;i g&#x1ECD;i h&#xE0;m n&#xE0;y gi&#xFA;p vi&#x1EC7;c qu&#x1EA3;n l&#xFD; &#x111;&#x1EA7;u ra c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh theo &#xFD; mu&#x1ED1;n c&#x1EE7;a ng&#x1B0;&#x1EDD;i l&#x1EAD;p tr&#xEC;nh d&#x1EC5; d&#xE0;ng h&#x1A1;n. </p>
+<h2 id="3-l&#x1EDD;i-g&#x1ECD;i-h&#xE0;m-exec">3. L&#x1EDD;i g&#x1ECD;i h&#xE0;m exec():</h2>
+<p>D&#xF9;ng &#x111;&#x1EC3; kh&#x1EDF;i ch&#x1EA1;y m&#x1ED9;t ch&#x1B0;&#x1A1;ng tr&#xEC;nh kh&#xE1;c &#x111;&#x1B0;&#x1EE3;c g&#x1ECD;i t&#x1EEB; m&#x1ED9;t ch&#x1B0;&#x1A1;ng tr&#xEC;nh &#x111;ang ch&#x1EA1;y.</p>
+<p>Khi g&#x1ECD;i h&#xE0;m n&#xE0;y, ph&#x1EA7;n code (d&#x1EEF; li&#x1EC7;u t&#x129;nh) s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c ghi &#x111;&#xE8; v&#xE0;o ph&#x1EA7;n  code hi&#x1EC7;n t&#x1EA1;i, c&#xE1;c v&#xF9;ng nh&#x1EDB; c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh c&#x169;ng s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c kh&#x1EDF;i t&#x1EA1;o l&#x1EA1;i, sau &#x111;&#xF3; H&#x110;H s&#x1EBD; ch&#x1EA1;y ch&#x1B0;&#x1A1;ng tr&#xEC;nh v&#x1EDB;i c&#xE1;c tham s&#x1ED1; &#x111;&#x1B0;&#x1EE3;c cho.</p>
+<h2 id="4-pipes-trong-unix">4. Pipes trong UNIX:</h2>
+<p>Di&#x1EC5;n t&#x1EA3; m&#x1ED9;t chu&#x1ED7;i c&#xE1;c h&#xE0;nh &#x111;&#x1ED9;ng &#x111;&#x1B0;&#x1EE3;c th&#x1EF1;c thi nh&#x1B0; 1 ch&#x1B0;&#x1A1;ng tr&#xEC;nh, b&#x1EB1;ng c&#xE1;ch g&#x1ECD;i nhi&#x1EC1;u ch&#x1B0;&#x1A1;ng tr&#xEC;nh t&#x1EEB; UNIX shell. </p>
+<p>V&#x1EDB;i l&#x1EDD;i g&#x1ECD;i h&#xE0;m pipe(), &#x111;&#x1EA7;u ra c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh n&#xE0;y s&#x1EBD; &#x111;&#x1B0;&#x1EE3;c k&#x1EBF;t n&#x1ED1;i t&#x1EDB;i 1 pipe trong kernel c&#x1EE7;a H&#x110;H v&#xE0; tr&#x1EDF; th&#xE0;nh &#x111;&#x1EA7;u ra c&#x1EE7;a ch&#x1B0;&#x1A1;ng tr&#xEC;nh &#x111;&#x1B0;&#x1EE3;c k&#x1EBF;t n&#x1ED1;i v&#xE0;o c&#xF9;ng pipe &#x111;&#xF3;. </p>
+<h2 id="5-qu&#x1EA3;n-l&#xFD;-ti&#x1EBF;n-tr&#xEC;nh-v&#xE0;-ng&#x1B0;&#x1EDD;i-d&#xF9;ng">5. Qu&#x1EA3;n l&#xFD; ti&#x1EBF;n tr&#xEC;nh v&#xE0; ng&#x1B0;&#x1EDD;i d&#xF9;ng:</h2>
+<p>Ngo&#xE0;i c&#xE1;c API tr&#xEA;n, H&#x110;H cung c&#x1EA5;p r&#x1EA5;t nhi&#x1EC1;u API &#x111;&#x1EC3; c&#xF3; th&#x1EC3; t&#x1B0;&#x1A1;ng t&#xE1;c v&#x1EDB;i ti&#x1EBF;n tr&#xEC;nh. V&#xED; d&#x1EE5; nh&#x1B0; h&#xE0;m kill() - g&#x1EED;i t&#xED;n hi&#x1EC7;u &#x111;&#x1EBF;n ti&#x1EBF;n tr&#xEC;nh &#x111;&#x1EC3; d&#x1EEB;ng, t&#x1EA1;m d&#x1EEB;ng,...</p>
+<p>H&#x110;H cung c&#x1EA5;p r&#x1EA5;t nhi&#x1EC1;u c&#xE1;ch &#x111;&#x1EC3; &#x111;&#x1B0;a m&#x1ED9;t s&#x1EF1; ki&#x1EC7;n t&#x1EDB;i ti&#x1EBF;n tr&#xEC;nh c&#x1EE5; th&#x1EC3; c&#x169;ng nh&#x1B0; to&#xE0;n b&#x1ED9; <strong>1 nh&#xF3;m ti&#x1EBF;n tr&#xEC;nh (process groups).</strong></p>
+<p>&#x110;i&#x1EC1;u n&#xE0;y d&#x1EAB;n t&#x1EDB;i v&#x1EA5;n &#x111;&#x1EC1; r&#x1EB1;ng ai c&#xF3; th&#x1EC3; g&#x1EED;i t&#xED;n hi&#x1EC7;u v&#xE0; ai kh&#xF4;ng. V&#xEC; v&#x1EAD;y,  c&#xE1;c H&#x110;H hi&#x1EC7;n &#x111;&#x1EA1;i &#x111;&#xE3; t&#x1EA1;o ra kh&#xE1;i ni&#x1EC7;m <strong>ng&#x1B0;&#x1EDD;i d&#xF9;ng</strong>. M&#x1ED9;t ng&#x1B0;&#x1EDD;i d&#xF9;ng c&#xF3; th&#x1EC3; &#x111;i&#x1EC1;u khi&#x1EC3;n ti&#x1EBF;n tr&#xEC;nh c&#x1EE7;a ch&#xED;nh h&#x1ECD;, c&#xF2;n H&#x110;H s&#x1EBD; ph&#x1EE5; tr&#xE1;ch vi&#x1EC7;c qu&#x1EA3;n l&#xFD; v&#xE0; ph&#xE2;n chia t&#xE0;i nguy&#xEA;n gi&#x1EEF;a c&#xE1;c ng&#x1B0;&#x1EDD;i d&#xF9;ng.</p>
 
                                 
                                 </section>
@@ -360,12 +381,12 @@
 
             
                 
-                <a href="../../golang/ham-khong-truyen-tham-so.html" class="navigation navigation-prev " aria-label="Previous page: Hàm không truyền tham số">
+                <a href="tien-trinh-process.html" class="navigation navigation-prev " aria-label="Previous page: Tiến trình (Process)">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="gioi-thieu.html" class="navigation navigation-next " aria-label="Next page: Giới thiệu">
+                <a href="../../thuat-toan/cac-dang-giai-thuat.html" class="navigation navigation-next " aria-label="Next page: Các dạng giải thuật">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -376,7 +397,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"Tóm tắt sách, ghi lại một số lưu ý quan trọng","title":"Operating Systems: Three Easy Pieces","level":"5.1","depth":1,"next":{"title":"Giới thiệu","level":"5.1.1","depth":2,"path":"he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md","ref":"he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md","articles":[]},"previous":{"title":"Hàm không truyền tham số","level":"4.3","depth":1,"path":"golang/ham-khong-truyen-tham-so.md","ref":"golang/ham-khong-truyen-tham-so.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-dieu-hanh/operating-systems-three-easy-pieces/README.md","mtime":"2021-02-04T10:39:55.798Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-11T09:29:40.110Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"Các API thực tế, thường được dùng trong các hệ điều hành UNIX","title":"API của tiến trình","level":"5.1.3","depth":2,"next":{"title":"Các dạng giải thuật","level":"6.1","depth":1,"path":"thuat-toan/cac-dang-giai-thuat.md","ref":"thuat-toan/cac-dang-giai-thuat.md","articles":[]},"previous":{"title":"Tiến trình (Process)","level":"5.1.2","depth":2,"path":"he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process.md","ref":"he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"he-dieu-hanh/operating-systems-three-easy-pieces/api-cua-tien-trinh.md","mtime":"2021-02-11T09:29:36.242Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-11T09:29:40.110Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
