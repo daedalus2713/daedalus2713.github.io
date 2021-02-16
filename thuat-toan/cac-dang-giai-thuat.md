@@ -41,7 +41,7 @@ begin
 end;
 ```
 
-## Tham ăn
+## Tham lam
 
 \_ Tư tưởng: 
 
@@ -62,4 +62,27 @@ begin
     end;
 end;    
 ```
+
+## Chia để trị
+
+\_ Tư tưởng: Phân bài toán cần giải thành các bài toán con, cho đến khi ta nhận được bài toán con hoặc đã có thuật giải hoặc có thể dễ dàng đưa ra thuật giải, sau đó kết hợp các nghiệm. Các bài toán con:
+
+* Thường là cùng dạng với bài toán ban đầu
+* Có cỡ nhỏ hơn 
+
+```text
+procedure DivideConquer(A,x);
+begin
+    if (A du nho) then Solve(A)
+    else
+    begin
+        Chia A thanh cac ban toan con A1, A2,...., Am;
+        for i := 1 to m do DivideConquer(Ai,xi);
+        Ket hop cac nghiem xi (i= 1 -> m) cua cac bai toan Ai de 
+        tim duoc nghiem cua bai toan A;
+    end;
+end;
+```
+
+
 
