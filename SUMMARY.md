@@ -23,6 +23,7 @@
   * [Giới thiệu](he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md)
   * [Tiến trình \(Process\)](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process.md)
   * [API của tiến trình](he-dieu-hanh/operating-systems-three-easy-pieces/api-cua-tien-trinh.md)
+  * [Cơ chế: Thực thi trực tiếp có giới hạn](he-dieu-hanh/operating-systems-three-easy-pieces/co-che-thuc-thi-truc-tiep-co-gioi-han.md)
 
 ## Thuật toán
 
