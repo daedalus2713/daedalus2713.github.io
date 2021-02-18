@@ -48,5 +48,52 @@ Có 2 giai đoạn trong giao thức thực thi trực tiếp có giới hạn:
   * Khi tiến trình muốn thực hiện lời gọi hệ thống, các chỉ dẫn sẽ được trap vào HĐH để xử lý và trả lại quyền điều khiển cho tiến trình thông qua return-from-trap.
   * Khi tiến trình chạy xong, nó thường thực hiện code để thoát chương trình, thường là 1 lời gọi hệ thống. Tại thời điểm đó, HĐH dọn dẹp tiến trình. 
 
- 
+## 3. Chuyển đổi giữa các tiến trình
+
+Khi tiến trình đang chạy trực tiếp trên CPU, HĐH lúc đó đang không được chạy. Làm sao để HĐH lấy lại quyền điều khiển của CPU để có thể chuyển đổi giữa các tiến trình ? 
+
+### 3.1. Đợi các lời gọi hệ thống
+
+HĐH cho rằng các tiến trình sẽ thực thi hợp lý, các tiến trình thực thi trong thời gian dài sẽ định kỳ giao CPU cho HĐH để quyết định thực thi các nhiệm vụ khác. Thực tế, đa số các tiến trình sẽ giao lại CPU cho HĐH khi thực hiện các lời gọi hệ thống. Các hệ thống như này thường bao gồm 1 lời gọi hệ thống **yield**, có tác dụng chuyển quyền điều khiển CPU cho HĐH.
+
+Các chương trình cũng chuyển quyền điều khiển cho HĐH khi thực thi các tác vụ bất hợp pháp\(illegal\).
+
+Tuy nhiên, việc gì sẽ xảy ra nếu HĐH không lấy lại được quyền điều khiển ? Các tiến trình sẽ không bao giờ thực hiện các lời gọi hệ thống ?
+
+### 3.2. Hệ điều hành nắm quyền điều khiển
+
+Để có thể lấy lại quyền điều khiển, các hệ thống sử dụng một bộ hẹn giờ ngắt \(**timer interrrupt**\), đây là một thiết bị được lập trình để tạo ra tín hiệu ngắt mỗi chu kỳ\(vài mili giây\). Khi tín hiệu ngắt được tạo ra, tiến trình đang chạy sẽ được tạm dùng, và một bộ xử lý ngắt được cài đặt sẵn trong HĐH sẽ thực thi, từ đó HĐH lấy lại quyền điều khiển của CPU.
+
+Trong thời gian khởi động, HĐH cần phải:
+
+* Thông báo cho phần cứng thực thi đoạn mã nào khi có tín hiệu ngắt
+* Khởi động bộ hẹn giờ
+
+Khi tín hiệu ngắt xảy ra, các phần cứng cũng cần phải chịu trách nhiệm ghi nhớ lại trạng thái của chương trình đang chạy để khi return-from-trap có thể tiếp tục chạy đúng.
+
+### 3.3. Lưu và phục hồi ngữ cảnh \(context\)
+
+Khi HĐH lấy lại quyền điều khiển, nó cần quyết định xem nên tiếp tục chạy tiến trình hay là chạy một tiến trình khác. Nếu quyết định chuyển tiến trình, HĐH sẽ thực hiện **context switch:** 
+
+* Lưu vài giá trị thanh ghi của tiến trình đang được thực thi
+* Khôi phục các giá trị từ tiến trình chuẩn bị được thực thi
+
+ Sau khi thực hiện, HĐH đảm bảo rằng return-from-trap đã được thực thi, thay vì trở lại tiến trình đang chạy, HĐH tiếp tục thực thi một tiến trình khác.
+
+Để lưu được context của tiến trình đang chạy, HĐH thực thi một số đoạn code assembly bậc thấp để lưu lại các giá trị thanh gi, bộ đếm tiến trình, kernal stack của tiến trình đang được thực thi.
+
+Trong quá trình này, có 2 lạo thanh ghi được lưu/phục hồi:
+
+* Khi tín hiệu ngắt xảy ra, các thanh ghi người dụng của tiến trình đang chạy được lưu bởi phần cứng, sử dụng kernel stack của tiến trình đó
+* Khi HĐH muốn chuyển tiến trình,  thanh ghi kernal được lưu lại bởi phần mềm \(vd: HĐH\), vào cấu trúc tiến trình \(**process structure**\) của tiến trình đó. Khi đó, hệ thống sẽ được chuyển từ được bẫy \(trapped\) bởi tiến trình A, sang được bẫy bởi tiến trình B.
+
+## 4. Concurrency
+
+HĐH cần phải quan tâm đến các sự kiện xảy ra khi đang xử lý tiến trình ngắt hoặc bẫy \(trap handling\).
+
+Về cơ bản, HĐH sẽ vô hiệu hóa tín hiệu ngắt khác khi đang xử lý tín hiệu ngắt để đảm bảo không một tín hiệu ngắt nào được chuyển tới CPU. Tuy nhiên khi vô hiệu hóa quá lâu sẽ dẫn tới mất các tín hiệu ngắt.
+
+HĐH đã được phát triển nhiều cơ chế khóa tinh vi để bảo vệ truy cập đồng thời tới 1 cấu trúc dữ liệu bên trong. 
+
+
 
