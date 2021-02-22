@@ -29,3 +29,7 @@
 
 * [Các dạng giải thuật](thuat-toan/cac-dang-giai-thuat.md)
 
+## i3wm
+
+* [Config](i3wm/config.md)
+
