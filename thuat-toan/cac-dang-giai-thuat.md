@@ -84,5 +84,18 @@ begin
 end;
 ```
 
+## Quy hoạch động
 
+Tư tưởng bài toán: 
+
+* Chia bài toán cần giải thành các bài toán con có thể giải được dễ dàng
+* Sử dụng 1 bảng để lưu giữ lời giải của các bài toán con đã được giải
+* Lấy lời giải ở trong bảng để tổng hợp lại thành lời giải cho bài toán ban đầu
+
+Các bước giải bài toán:
+
+* Tìm nghiệm của bài toán con nhỏ nahát
+* Tìm ra công thức xây dựng nghiệm của bài toán qua các bài toán cỡ nhỏ hơn
+* Tạo ra một bảng lưu giữ các nghiệm của bài toán con
+* Tìm nghiệm của bài toán ban đầu
 
