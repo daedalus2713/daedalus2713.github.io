@@ -2,15 +2,6 @@
 
 * [Giới thiệu](README.md)
 
-## Cơ sở dữ liệu
-
-* [POSTGRESQL BUFFER](co-so-du-lieu/postgresql-buffer.md)
-* [HOW TO INSTALL POSTGRESQL](co-so-du-lieu/postgres-buffer.md)
-
-## Hệ phân tán
-
-* [SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices](he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md)
-
 ## Golang
 
 * [Lưu ý khi function trả về](golang/luu-y-khi-function-tra-ve.md)
@@ -24,6 +15,15 @@
   * [Tiến trình \(Process\)](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process.md)
   * [API của tiến trình](he-dieu-hanh/operating-systems-three-easy-pieces/api-cua-tien-trinh.md)
   * [Cơ chế: Thực thi trực tiếp có giới hạn](he-dieu-hanh/operating-systems-three-easy-pieces/co-che-thuc-thi-truc-tiep-co-gioi-han.md)
+
+## Cơ sở dữ liệu
+
+* [POSTGRESQL BUFFER](co-so-du-lieu/postgresql-buffer.md)
+* [HOW TO INSTALL POSTGRESQL](co-so-du-lieu/postgres-buffer.md)
+
+## Hệ phân tán
+
+* [SUMMARY: 11 Reasons Why You Are Going To Fail With Microservices](he-phan-tan/summary-11-reasons-why-you-are-going-to-fail-with-microservices.md)
 
 ## Thuật toán
 
