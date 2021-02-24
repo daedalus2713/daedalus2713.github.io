@@ -1,3 +1,7 @@
+---
+description: Limited Direct Execution
+---
+
 # Cơ chế: Thực thi trực tiếp có giới hạn
 
 Để có thể áo hóa CPU, HĐH cần phải chia sẻ CPU vật lý giữa nhiều công việc chạy song song. Ý tưởng cơ bản là để mỗi tiến trình chạy một thời gian nhỏ rồi chuyển cho tiến trình khác. Đây gọi là chia sẻ theo thời gian.
@@ -15,7 +19,7 @@ Khi HĐH muốn khởi chạy 1 tiến trình:
 
 Nếu để cho chương trình chạy trực tiếp trên CPU, ta cần phải tìm cách để:
 
-* Đảm bảo chhương trình chạy đúng với mong muốn
+* Đảm bảo chương trình chạy đúng với mong muốn
 * Làm sao để dừng tiến trình và chuyển sang tiến trình khác
 * Làm sao để cài đặt cơ chế chia sẻ thời gian nếu muốn ảo hóa CPU
 
@@ -29,7 +33,7 @@ Cách tiếp cận đầu tiên là cấp quyền cho tiến trình làm gì mà
 
 Cách tiếp cận khác là đưa ra chế độ mới cho bộ xử lý, hay còn gọi là chế độ người dùng \(**user mode**\); code chạy ở chế độ này sẽ bị giới hạn các hành động có thể thực thi. Khi tiến trình thực thi hành động bị giới hạn, bộ xử lý sẽ báo lỗi và HĐH sẽ xóa bỏ tiến trình đó.
 
-Đối lập với cả user mode là kernel mode \(chế độ nhân\), đây là chế độ mà HĐH hoặc kernel dùng để chạy. Trong chế độ này, code có thể làm tất cả mọi hành động như yêu cầu, kể cả các hành động bị giới hạn.
+Đối lập với cả user mode là **kernel mode** \(chế độ nhân\), đây là chế độ mà HĐH hoặc kernel dùng để chạy. Trong chế độ này, code có thể làm tất cả mọi hành động như yêu cầu, kể cả các hành động bị giới hạn.
 
 Để tiến trình người dùng có thể thực hiện các hành động yêu cầu quyền, hầu như các phần cứng\(được ảo hóa\) đều cung cấp khả năng cho chương trình thực hiện các lời gọi hệ thống.Để thực hiện lời gọn hệ thống, chương trình cần thực thi một chỉ dẫn bẫy đặc biệt \(**special trap instruction**\). 
 
@@ -85,7 +89,7 @@ Khi HĐH lấy lại quyền điều khiển, nó cần quyết định xem nên
 Trong quá trình này, có 2 lạo thanh ghi được lưu/phục hồi:
 
 * Khi tín hiệu ngắt xảy ra, các thanh ghi người dụng của tiến trình đang chạy được lưu bởi phần cứng, sử dụng kernel stack của tiến trình đó
-* Khi HĐH muốn chuyển tiến trình,  thanh ghi kernal được lưu lại bởi phần mềm \(vd: HĐH\), vào cấu trúc tiến trình \(**process structure**\) của tiến trình đó. Khi đó, hệ thống sẽ được chuyển từ được bẫy \(trapped\) bởi tiến trình A, sang được bẫy bởi tiến trình B.
+* Khi HĐH muốn chuyển tiến trình,  thanh ghi kernel được lưu lại bởi phần mềm \(vd: HĐH\), vào cấu trúc tiến trình \(**process structure**\) của tiến trình đó. Khi đó, hệ thống sẽ được chuyển từ được bẫy \(trapped\) bởi tiến trình A, sang được bẫy bởi tiến trình B.
 
 ## 4. Concurrency
 

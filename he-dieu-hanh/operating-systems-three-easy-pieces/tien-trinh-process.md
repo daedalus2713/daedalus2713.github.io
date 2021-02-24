@@ -44,7 +44,7 @@ HĐH cũng cần làm các nhiệm vụ khởi tạo, liên quan tới hoạt đ
 
 Cuối cùng, HĐH chạy chương trình tại điểm đầu vào \(entry point\), thường là hàm main\(\), CPU được chuyển cho tiến trình vừa mới tạo và bắt đầu thực thi chương trình.
 
-## Trạng thái của tiến trình
+## 4. Trạng thái của tiến trình
 
 ![S&#x1A1; &#x111;&#x1ED3; tr&#x1EA1;ng th&#xE1;i c&#x1EE7;a ti&#x1EBF;n tr&#xEC;nh](../../.gitbook/assets/processstate.png)
 
@@ -54,7 +54,7 @@ Trong các hệ thống thời đầu tiên, tiến trình được chia ra làm
 * Sẵn sàng: Có thể chạy nhưng HĐH chưa cho phép thực thi.
 * Bị chặn: Tiến trình đang thực hiện các hoạt động làm nó chưa sẵn sàng cho tới khi một sự kiện nào đó xảy ra. Thường là các hoạt động vào/ra
 
-## Cấu trúc dữ liệu
+## 5. Cấu trúc dữ liệu
 
 HĐH cũng là một chương trình, và cần có các CTDL để lưu giữ các thông tin cần thiết.
 
