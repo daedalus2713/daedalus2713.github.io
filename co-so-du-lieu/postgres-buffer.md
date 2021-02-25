@@ -5,7 +5,7 @@
 * Run command:
   * ```bash
     $ sudo apt update
-    $ sudo apt install postgresql postgresql-contri
+    $ sudo apt install postgresql postgresql-contrib
     ```
 * Login to PostgreSQL
   * Switch to user postgres:
