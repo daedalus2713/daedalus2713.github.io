@@ -12,3 +12,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![CPU scheduling introduction](../../.gitbook/assets/cpuscheduling.png)
 
+![Scheduler: Multi-Level Feedback Queue](../../.gitbook/assets/schedulermultilevelfeedbackqueue.png)
+
