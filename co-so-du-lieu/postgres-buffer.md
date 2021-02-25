@@ -30,6 +30,10 @@
   * edit:
     * local all all peer
     * -&gt; local all all md5
+* Change password for user postgres
+  * ```text
+    $ sudo passwd postgres
+    ```
 
 ## Connect with PGAdmin
 
