@@ -17,7 +17,7 @@
 \_ Thời gian quay vòng \(**turnaround time**\): tồng thời gian từ khi job đến cho tới khi hoàn thành. Thể hiện tính hiệu quả của việc lập lịch
 
 $$
-T(quay vòng) = T(hoàn thành) - T(tới)
+T(turnaround) = T(complete) - T(arrive)
 $$
 
 _\__ Độ công bằng cũng là một số liệu mà ta cần quan tâm tới.
@@ -52,13 +52,34 @@ $$
 
 \_ HĐH sẽ quyết định xem job nào cần ít thời gian nhất để hoàn thành và thực hiện chạy job đó.
 
-## 6. Thời gian phản hồi
+## 6. Độ đo: Thời gian phản hồi
 
 \_ Để đánh giá các hệ thống chia sẻ thời gian, một độ đo mới được xét đến là thời gian phản hồi. Đó là thời gian từ khi job đến cho tới lần đầu tiên job được lập lịch \(chạy lần đầu tiên\)
 
 $$
-T(phản hồi) = T (chạy lần đầu tiên) - T(đến)
+T(response) = T (first run) - T(arrive)
 $$
 
 \_ Xét tới độ đo này, STCF và các chiến lược tương tự thường không cho thấy kết quả tốt. Vì 1 job sẽ phải đợi các job còn lại chạy xong để có thể thực hiện phản hồi.
+
+## 7. RR - Round robin
+
+\_ Round robin chạy 1 job trong 1 khoảng thời gian \(**time slice/scheduling quatum**\) và chuyển sang một job khác trong hàng đợi để chạy.
+
+\_ Thời gian phản hồi của hệ thống sẽ tỉ lệ nghịch với khoảng thời gian lập lịch lại của thuật toán. Tuy nhiên, nếu thời gian lập lịch quá ngắn thì chi phí để dành cho việc lập lịch sẽ tốn rất lớn. Cho nên ta cần cân đối thời gian để chi phí của việc lập lịch không làm cho hệ thống mất tính nhanh nhẹn.
+
+\_ Chi phí của context switch không chỉ đến từ việc lưu và phục hồi các thanh ghi, ngoài ra còn từ việc chuyển trạng thái của CPU caches, TLBs\(Translation lookaside buffer\), dự đoán rẽ nhánh và các phần cứng khác. Context switch làm cho các trạng thái này bị mất đi và đưa vào các trạng thái mới của job đang chạy.
+
+\_ Khi xét riêng về thời gian quay vòng, ta có thể thấy RR là một thuật toán tồi, vì nó gần như kéo dài job ra nhiều nhất có thể. Tuy nhiên, việc này sẽ đảm bảo được tính công bằng khi chạy các job.
+
+## 8. Incorporating I/O
+
+\_ Khi một tiến trình thực hiện thao tác I/O, nó sẽ ở trạng thái **blocked,** và không sử dụng CPU trong khoảng thời gian này. 
+
+* Khi đó, bộ lập lịch có thể cho job khác chạy. 
+* Khi I/O được thực hiện xong, 1 tín hiệu ngắt sẽ được gửi và HĐH đưa tiến trình trở lại trạng thái **ready.**
+
+## 9. Không có dự đoán về thời gian chạy của job
+
+\_ HĐH thường không thể biết hoặc có rất ít thông tin về độ dài của mỗi job. Vậy làm các này để ta có thể tiếp cận các phương pháp như SJF/STCF nếu không có thông tin? Hơn nữa là kết hợp các tư tưởng trong bộ lập lịch Round Robin để cải thiện thời gian phản hồi ?
 
