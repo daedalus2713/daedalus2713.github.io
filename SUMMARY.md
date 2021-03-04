@@ -18,6 +18,7 @@
   * [Lập lịch CPU](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu.md)
   * [Lập lịch: Hàng đợi phản hồi đa cấp độ](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-hang-doi-phan-hoi-da-cap-do.md)
   * [Lập lịch: Bộ lập lịch xổ số](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-bo-lap-lich-xo-so.md)
+  * [Lập lịch: Đa vi xử lý \(Multi-CPU\)](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-da-vi-xu-ly-multi-cpu.md)
 
 ## Cơ sở dữ liệu
 
