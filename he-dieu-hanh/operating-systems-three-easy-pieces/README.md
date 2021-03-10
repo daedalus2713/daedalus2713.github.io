@@ -20,3 +20,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Proportional Share Scheduler](../../.gitbook/assets/schedulinglottery.png)
 
+## 3. Memory
+
+![Address space](../../.gitbook/assets/addressspacemmap.png)
+
