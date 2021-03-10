@@ -12,13 +12,14 @@
 
 * [Operating Systems: Three Easy Pieces](he-dieu-hanh/operating-systems-three-easy-pieces/README.md)
   * [Giới thiệu](he-dieu-hanh/operating-systems-three-easy-pieces/gioi-thieu.md)
-  * [Tiến trình \(Process\)](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process.md)
-  * [API của tiến trình](he-dieu-hanh/operating-systems-three-easy-pieces/api-cua-tien-trinh.md)
-  * [Cơ chế: Thực thi trực tiếp có giới hạn](he-dieu-hanh/operating-systems-three-easy-pieces/co-che-thuc-thi-truc-tiep-co-gioi-han.md)
-  * [Lập lịch CPU](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu.md)
-  * [Lập lịch: Hàng đợi phản hồi đa cấp độ](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-hang-doi-phan-hoi-da-cap-do.md)
-  * [Lập lịch: Bộ lập lịch xổ số](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-bo-lap-lich-xo-so.md)
-  * [Lập lịch: Đa vi xử lý \(Multi-CPU\)](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-da-vi-xu-ly-multi-cpu.md)
+  * [Tiến trình \(Process\)](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process/README.md)
+    * [Cơ chế: Thực thi trực tiếp có giới hạn](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process/co-che-thuc-thi-truc-tiep-co-gioi-han.md)
+    * [API của tiến trình](he-dieu-hanh/operating-systems-three-easy-pieces/tien-trinh-process/api-cua-tien-trinh.md)
+  * [Lập lịch CPU](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/README.md)
+    * [Lập lịch: Bộ lập lịch xổ số](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-bo-lap-lich-xo-so.md)
+    * [Lập lịch: Hàng đợi phản hồi đa cấp độ](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-hang-doi-phan-hoi-da-cap-do.md)
+    * [Lập lịch: Đa vi xử lý \(Multi-CPU\)](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-da-vi-xu-ly-multi-cpu.md)
+  * [Không gian địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi.md)
 
 ## Cơ sở dữ liệu
 
