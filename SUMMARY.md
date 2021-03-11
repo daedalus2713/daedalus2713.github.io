@@ -19,7 +19,9 @@
     * [Lập lịch: Bộ lập lịch xổ số](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-bo-lap-lich-xo-so.md)
     * [Lập lịch: Hàng đợi phản hồi đa cấp độ](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-hang-doi-phan-hoi-da-cap-do.md)
     * [Lập lịch: Đa vi xử lý \(Multi-CPU\)](he-dieu-hanh/operating-systems-three-easy-pieces/lap-lich-cpu/lap-lich-da-vi-xu-ly-multi-cpu.md)
-  * [Không gian địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi.md)
+  * [Không gian địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/README.md)
+    * [API của bộ nhớ chính](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/api-cua-bo-nho-chinh.md)
+  * [temp](he-dieu-hanh/operating-systems-three-easy-pieces/temp.md)
 
 ## Cơ sở dữ liệu
 

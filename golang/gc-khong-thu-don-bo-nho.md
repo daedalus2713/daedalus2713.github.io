@@ -17,7 +17,7 @@ Trong Go, để thực hiện giải pháp nói trên. Chúng ta có thể sử 
 * Set the enviroment GODEBUG=madvdontneed=1. 
 * Use the function debug.FreeOSMemory\(\).
 
-## Đôi điều về hàm madvise\(\)
+## Đôi điều về hàm madvise\(\) - memory advise
 
 Reference: [https://man7.org/linux/man-pages/man2/madvise.2.html](https://man7.org/linux/man-pages/man2/madvise.2.html)
 
