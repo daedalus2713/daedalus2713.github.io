@@ -26,3 +26,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Address Translation](../../.gitbook/assets/addresstranslation.png)
 
+![Segmentation](../../.gitbook/assets/segmentation.png)
+
