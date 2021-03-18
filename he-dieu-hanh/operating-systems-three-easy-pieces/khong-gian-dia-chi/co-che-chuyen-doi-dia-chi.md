@@ -11,7 +11,7 @@ Hệ điều hành và phần cứng cần phải cùng phối hợp làm việc
 * Phân cứng: Chuyển đổi từ địa chỉ ảo thành địa chỉ vật lý trong bộ nhớ
 * Hệ điều hành: Quản lý các vùng nhớ
 
-### 1. Giả định:
+## 1. Giả định:
 
 \_ Đơn giản hóa việc ảo hóa bộ nhớ
 
@@ -21,7 +21,7 @@ Hệ điều hành và phần cứng cần phải cùng phối hợp làm việc
 
 \_ Mỗi không gian địa chỉ có kích thước _chính xác_.
 
-### 2. Dynamic \(Hardware-based\) Relocation
+## 2. Dynamic \(Hardware-based\) Relocation
 
 \_ Một trong ý tưởng đầu tiên được đề cập là **base and bounds** \(Cơ sở và cận\) hay còn được gọi là dynamic relocation. Được áp dụng để có thể đặt các không gian địa chỉ **theo ý muốn** của người dùng và **giới hạn** tiến trình truy cập vào vùng nhớ của chúng. 
 
@@ -34,7 +34,7 @@ _\__ Thanh ghi bound được sử dụng để giới hạn lại vùng nhớ c
 
 \_ HĐH cũng cần phải lưu lại các vùng nhớ trống, một trong các cách đơn giản là sử dụng danh sách vùng nhớ trống, là các vùng nhớ vật lý đang không được sử dụng.
 
-### 3. Vấn đề của hệ điều hành
+## 3. Vấn đề của hệ điều hành
 
 \_ HĐH cần phải tìm vùng nhớ trống để cấp phát cho chương trình mới được tạo ra
 

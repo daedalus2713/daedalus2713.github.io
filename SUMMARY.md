@@ -22,6 +22,7 @@
   * [Không gian địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/README.md)
     * [API của bộ nhớ chính](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/api-cua-bo-nho-chinh.md)
     * [Cơ chế: Chuyển đổi địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/co-che-chuyen-doi-dia-chi.md)
+    * [Phân đoạn bộ nhớ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/phan-doan-bo-nho.md)
   * [temp](he-dieu-hanh/operating-systems-three-easy-pieces/temp.md)
 
 ## Cơ sở dữ liệu
