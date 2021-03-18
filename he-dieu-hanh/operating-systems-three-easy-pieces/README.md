@@ -24,3 +24,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Address space](../../.gitbook/assets/addressspacemmap.png)
 
+![Address Translation](../../.gitbook/assets/addresstranslation.png)
+
