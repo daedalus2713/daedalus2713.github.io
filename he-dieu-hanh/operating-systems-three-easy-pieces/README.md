@@ -28,3 +28,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Segmentation](../../.gitbook/assets/segmentation.png)
 
+![Free-Space Management](../../.gitbook/assets/freespacemanagement.png)
+
