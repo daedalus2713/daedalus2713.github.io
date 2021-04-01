@@ -30,3 +30,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Free-Space Management](../../.gitbook/assets/freespacemanagement.png)
 
+![Paging Intro and TLBs](../../.gitbook/assets/pagingintroandtlbs.png)
+
