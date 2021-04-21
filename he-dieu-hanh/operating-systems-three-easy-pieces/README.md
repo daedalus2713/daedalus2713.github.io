@@ -32,3 +32,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Paging Intro and TLBs](../../.gitbook/assets/pagingintroandtlbs.png)
 
+![Paging Smaller Tables](../../.gitbook/assets/pagingsmallertables.png)
+
