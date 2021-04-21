@@ -27,6 +27,7 @@
     * [Phân trang: Giới thiệu](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/phan-trang-gioi-thieu.md)
     * [Phân trang: Tăng tốc chuyển đổi địa chỉ](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/phan-trang-tang-toc-chuyen-doi-dia-chi.md)
     * [Phân trang: Dùng bảng nhỏ hơn](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/phan-trang-dung-bang-nho-hon.md)
+    * [Cơ chế](he-dieu-hanh/operating-systems-three-easy-pieces/khong-gian-dia-chi/co-che.md)
   * [temp](he-dieu-hanh/operating-systems-three-easy-pieces/temp.md)
 
 ## Cơ sở dữ liệu
