@@ -36,3 +36,5 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Mechanisms](../../.gitbook/assets/mechanisms.png)
 
+![Memory Policies](../../.gitbook/assets/memorypolicies.png)
+
