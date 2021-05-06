@@ -69,7 +69,7 @@ description: Chia sẻ theo tỷ lệ (Proportional Share)
 
 \_ CFS cũng cung cấp sự điều khiển cho mức độ quan trọng của các tiến trình, cho phép người sử dụng cấp cho tiến trình mức độ chia sẻ cao hơn về tài nguyên. Thông qua mức độ **nice** của một tiến trình \(thường là tham số trong khoảng -20 tới +19\). Giá trị càng lớn cho thấy độ ưu tiên của tiếng trình các thấp.
 
-_when you’re too nice, you just don’t get as much \(scheduling\) attention_
+_when you’re too nice, you just don’t get as much \(scheduling\) attention_
 
 \_ CFS sẽ ánh xạ các giá trị nice sang một giá trị trọng lượng, cho phép chúng ta tính ra được khung thời gian sẽ cấp cho mỗi tiến trình.
 
@@ -94,10 +94,4 @@ _when you’re too nice, you just don’t get as much \(scheduling\) attention_
 \_ CFS sẽ thay đổi vruntime của tiến trình khi nó thức dậy, bằng với vruntime nhỏ nhất ở trong cây đỏ đen.
 
 \_ Tuy nhiên, vẫn còn tồn tại vấn đề là những job thường ngủ trong thời gian ngắn sẽ không có được sự phân bổ tài nguyên công bằng.
-
-
-
-
-
-
 
