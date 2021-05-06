@@ -6,13 +6,15 @@ description: 'Tóm tắt sách, ghi lại một số lưu ý quan trọng'
 
 Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pages.cs.wisc.edu/~remzi/OSTEP/#book-chapters)
 
-## 1. Process
+## I. Ảo hóa
+
+### 1. Process
 
 ![Process mindmap](../../.gitbook/assets/process.png)
 
 ![Limited Direct Execution](../../.gitbook/assets/limiteddirectexecution.png)
 
-## 2. Scheduler
+### 2. Scheduler
 
 ![CPU scheduling introduction](../../.gitbook/assets/cpuscheduling.png)
 
@@ -20,7 +22,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Proportional Share Scheduler](../../.gitbook/assets/schedulinglottery.png)
 
-## 3. Memory
+### 3. Memory
 
 ![Address space](../../.gitbook/assets/addressspacemmap.png)
 
@@ -35,4 +37,10 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 ![Paging Smaller Tables](../../.gitbook/assets/pagingsmallertables.png)
 
 ![Mechanisms](../../.gitbook/assets/mechanisms.png)
+
+![Memory Policies](../../.gitbook/assets/memorypolicies.png)
+
+## II. Đồng thời
+
+
 
