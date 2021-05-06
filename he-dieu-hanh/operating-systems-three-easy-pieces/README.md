@@ -42,5 +42,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ## II. Đồng thời
 
+![Concurrency](../../.gitbook/assets/concurrency.png)
+
 
 
