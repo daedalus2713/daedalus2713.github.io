@@ -32,6 +32,7 @@
       * [Chính sách](he-dieu-hanh/operating-systems-three-easy-pieces/ao-hoa/khong-gian-dia-chi/chinh-sach.md)
   * [Đồng thời](he-dieu-hanh/operating-systems-three-easy-pieces/temp/README.md)
     * [API của luồng](he-dieu-hanh/operating-systems-three-easy-pieces/temp/api-cua-luong.md)
+    * [Khóa](he-dieu-hanh/operating-systems-three-easy-pieces/temp/khoa.md)
 
 ---
 
