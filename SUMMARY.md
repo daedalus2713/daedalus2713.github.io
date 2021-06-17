@@ -34,6 +34,7 @@
     * [API của luồng](he-dieu-hanh/operating-systems-three-easy-pieces/temp/api-cua-luong.md)
     * [Khóa](he-dieu-hanh/operating-systems-three-easy-pieces/temp/khoa.md)
     * [Khóa cho một số CTDL](he-dieu-hanh/operating-systems-three-easy-pieces/temp/khoa-cho-mot-so-ctdl.md)
+    * [Biến điều kiện \(Condition variables\)](he-dieu-hanh/operating-systems-three-easy-pieces/temp/bien-dieu-kien-condition-variables.md)
 
 ---
 
