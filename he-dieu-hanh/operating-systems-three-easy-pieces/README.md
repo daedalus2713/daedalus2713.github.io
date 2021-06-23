@@ -46,5 +46,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Condition variable](../../.gitbook/assets/conditionvariable.png)
 
+![Semaphores](../../.gitbook/assets/semaphores.png)
+
 
 
