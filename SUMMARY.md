@@ -36,6 +36,7 @@
     * [Khóa cho một số CTDL](he-dieu-hanh/operating-systems-three-easy-pieces/temp/khoa-cho-mot-so-ctdl.md)
     * [Biến điều kiện \(Condition variables\)](he-dieu-hanh/operating-systems-three-easy-pieces/temp/bien-dieu-kien-condition-variables.md)
     * [Semaphores](he-dieu-hanh/operating-systems-three-easy-pieces/temp/semaphores.md)
+    * [Các vấn đề thường gặp của lập trình đồng thời](he-dieu-hanh/operating-systems-three-easy-pieces/temp/cac-van-de-thuong-gap-cua-lap-trinh-dong-thoi.md)
 
 ---
 
