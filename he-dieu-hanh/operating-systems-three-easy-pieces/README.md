@@ -48,5 +48,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![Semaphores](../../.gitbook/assets/semaphores.png)
 
+![Common Concurrency Problem](../../.gitbook/assets/commonconcurrencyproblem.png)
+
 
 
