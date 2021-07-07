@@ -40,6 +40,7 @@
     * [Đồng thời trên sự kiện](he-dieu-hanh/operating-systems-three-easy-pieces/temp/dong-thoi-tren-su-kien.md)
   * [Persistent](he-dieu-hanh/operating-systems-three-easy-pieces/persistent/README.md)
     * [Thiết bị I/O](he-dieu-hanh/operating-systems-three-easy-pieces/persistent/thiet-bi-i-o.md)
+    * [Ổ đĩa cứng](he-dieu-hanh/operating-systems-three-easy-pieces/persistent/o-dia-cung.md)
 
 ---
 
