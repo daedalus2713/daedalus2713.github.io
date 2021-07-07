@@ -8,7 +8,7 @@
 
 \_ Các luồng trong cùng 1 chương trình có chung không gian địa chỉ
 
-\_ Khi thực hiện context-switch sẽ cập nhật như context-switch của tiến trình, tuy nhiên giữ nguyên khkông gian địa chỉ
+\_ Khi thực hiện context-switch sẽ cập nhật như context-switch của tiến trình, tuy nhiên giữ nguyên không gian địa chỉ
 
 \_ Sử dụng **Thread Control Block** để lưu trữ và điểu khiển luồng
 
