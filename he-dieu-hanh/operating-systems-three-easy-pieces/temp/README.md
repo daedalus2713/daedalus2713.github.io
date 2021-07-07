@@ -43,5 +43,5 @@
 
 ### 3.3. Chờ đợi giữa các luồng
 
-\_ Khi hỗ trợ tính nguyên tử, thì các luồng sử dụng toài nguyên găng cần phải chờ đợi để có thể thực hiện
+\_ Khi hỗ trợ tính nguyên tử, thì các luồng sử dụng tài nguyên găng cần phải chờ đợi để có thể thực hiện
 
