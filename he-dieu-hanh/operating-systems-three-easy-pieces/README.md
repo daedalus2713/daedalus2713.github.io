@@ -58,5 +58,7 @@ Link sách: [https://pages.cs.wisc.edu/~remzi/OSTEP/\#book-chapters](https://pag
 
 ![I/O devices](../../.gitbook/assets/i.odevices.png)
 
+![Hard Disk Drives](../../.gitbook/assets/harddiskdrives.png)
+
 
 
