@@ -12,10 +12,11 @@ fps_max 180
 cl_showfps 1
 
 // radar
-cl_radar_always_centered 1
-cl_radar_scale 0.3
-cl_hud_radar_scale 1.15
-cl_radar_icon_scale_min 0.6
+cl_radar_rotate 1
+cl_radar_always_centered 0
+cl_radar_scale 0.5
+cl_hud_radar_scale 1.2
+cl_radar_icon_scale_min 0.4
 bind "KP_plus" "incrementvar cl_radar_scale 0.25 1.0 0.05"
 bind "KP_minus" "incrementvar cl_radar_scale 0.25 1.0 -0.05"
 
